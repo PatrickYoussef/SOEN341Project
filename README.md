@@ -26,3 +26,8 @@ Instagram. Les PtitsProgrammeurs wanted to bring more than just a simplified ver
 the platform.
 The objective of this project is to implement the scrum methodology using an iteration of 4 sprints. First sprint is to step up the environment, second to implement the core features, third to add aditional features and fourth is for maintenance and fixing bugs.
 Document scrum meetings and using Git Hub repository.
+
+### Front end initial plans
+
+To begin, we will develop the profile page of the users. Basic layouts will be
+added so that back end can begin working with the platform. 
