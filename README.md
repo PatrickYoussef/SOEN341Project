@@ -34,4 +34,4 @@ added so that back end can begin working with the platform.
 
 ### Database startup
 
-We separate the database into mnay tables: users, pictures, comments, likes... After having a plan confirmed by the whole team, we can start researching on how to connect the database to the backend.
+We separate the database into many tables: users, pictures, comments, likes... After having a plan confirmed by the whole team, we can start researching on how to connect the database to the backend.
