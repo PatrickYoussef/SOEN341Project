@@ -31,3 +31,7 @@ Document scrum meetings and using Git Hub repository.
 
 To begin, we will develop the profile page of the users. Basic layouts will be
 added so that back end can begin working with the platform. 
+
+### Database startup
+
+We separate the database into mnay tables: users, pictures, comments, likes... After having a plan confirmed by the whole team, we can start researching on how to connect the database to the backend.
