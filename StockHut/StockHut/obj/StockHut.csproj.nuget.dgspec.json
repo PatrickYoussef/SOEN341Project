@@ -42,11 +42,9 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
+            "Microsoft.AspNetCore.SpaServices.Extensions": {
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[3.0.0, )"
             }
           },
           "imports": [
