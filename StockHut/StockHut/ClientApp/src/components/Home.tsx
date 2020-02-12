@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import logo from "/Users/Ayah/Documents/GitHub/SOEN341Project/StockHut/StockHut/ClientApp/src/login/stockhut.png";
-import "/Users/Ayah/Documents/GitHub/SOEN341Project/StockHut/StockHut/ClientApp/src/login/login.css";
+import logo from "../login/stockhut.png";
+import "../login/login.css";
 
 
 const Home = () => (
