@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\patri\\SOEN341Project\\StockHut\\StockHut\\StockHut.csproj": {}
+    "/Users/Ayah/Documents/GitHub/SOEN341Project/StockHut/StockHut/StockHut.csproj": {}
   },
   "projects": {
-    "C:\\Users\\patri\\SOEN341Project\\StockHut\\StockHut\\StockHut.csproj": {
+    "/Users/Ayah/Documents/GitHub/SOEN341Project/StockHut/StockHut/StockHut.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\patri\\SOEN341Project\\StockHut\\StockHut\\StockHut.csproj",
+        "projectUniqueName": "/Users/Ayah/Documents/GitHub/SOEN341Project/StockHut/StockHut/StockHut.csproj",
         "projectName": "StockHut",
-        "projectPath": "C:\\Users\\patri\\SOEN341Project\\StockHut\\StockHut\\StockHut.csproj",
-        "packagesPath": "C:\\Users\\patri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\patri\\SOEN341Project\\StockHut\\StockHut\\obj\\",
+        "projectPath": "/Users/Ayah/Documents/GitHub/SOEN341Project/StockHut/StockHut/StockHut.csproj",
+        "packagesPath": "/Users/Ayah/.nuget/packages/",
+        "outputPath": "/Users/Ayah/Documents/GitHub/SOEN341Project/StockHut/StockHut/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\patri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/Users/Ayah/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,8 +57,12 @@
               "version": "[3.0.1, 3.0.1]"
             },
             {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
               "version": "[3.0.2, 3.0.2]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
             }
           ],
           "frameworkReferences": {
@@ -75,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
         }
       }
     }

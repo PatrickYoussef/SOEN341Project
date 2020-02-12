@@ -338,3 +338,26 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+*.pdb
+StockHut/StockHut/bin/Debug/netcoreapp3.0/StockHut.pdb
+StockHut/StockHut/Properties/launchSettings.json
+*.props
+*.dll
+StockHut/StockHut/obj/Debug/netcoreapp3.0/StockHut.Views.pdb
+StockHut/StockHut/bin/Debug/netcoreapp3.0/Properties/launchSettings.json
+StockHut/StockHut/obj/project.assets.json
+StockHut/StockHut/obj/StockHut.csproj.nuget.cache
+StockHut/StockHut/bin/Debug/netcoreapp3.0/StockHut.runtimeconfig.dev.json
+package-lock.json
+StockHut/StockHut/obj/Debug/netcoreapp3.0/Razor/Pages/_ViewImports.cshtml.g.cs
+StockHut/StockHut/obj/Debug/netcoreapp3.0/Razor/Pages/Error.cshtml.g.cs
+StockHut/StockHut/obj/Debug/netcoreapp3.0/StockHut.assets.cache
+StockHut/StockHut/obj/Debug/netcoreapp3.0/StockHut.csproj.FileListAbsolute.txt
+StockHut/StockHut/obj/Debug/netcoreapp3.0/StockHut.csprojAssemblyReference.cache
+StockHut/StockHut/obj/Debug/netcoreapp3.0/StockHut.RazorCoreGenerate.cache
+StockHut/StockHut/obj/Debug/netcoreapp3.0/StockHut.Views.dll
+StockHut/StockHut/obj/project.assets.json
+StockHut/StockHut/obj/StockHut.csproj.nuget.cache
+StockHut/StockHut/obj/StockHut.csproj.nuget.dgspec.json
+StockHut/StockHut/obj/StockHut.csproj.nuget.g.props
+StockHut/StockHut/Properties/launchSettings.json
