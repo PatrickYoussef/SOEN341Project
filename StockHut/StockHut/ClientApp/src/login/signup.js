@@ -1,6 +1,6 @@
-﻿import React, { Component } from "react";
-import logo from "./stockhut.png";
-import "./login.css";
+﻿import React, { Component } from 'react';
+import logo from "./stockhut.png"
+import "./login.css"
 
 class signup extends Component {
     render() {
@@ -17,7 +17,7 @@ class signup extends Component {
                                 <input type="password" placeholder="password" />
                                 <input type="text" placeholder="email address" />
                                 <button>Create</button>
-                                <p className="message">Or <a href="login-layout.tsx">Sign In</a></p>
+                                <p className="message">Or <a href="Home.js">Sign In</a></p>
                             </form>
                         </div>
                     </div>
