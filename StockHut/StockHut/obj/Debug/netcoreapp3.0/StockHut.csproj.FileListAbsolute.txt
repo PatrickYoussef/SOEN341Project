@@ -103,3 +103,4 @@ C:\Users\patri\SOEN341Project\StockHut\StockHut\bin\Debug\netcoreapp3.0\runtimes
 C:\Users\patri\SOEN341Project\StockHut\StockHut\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\patri\SOEN341Project\StockHut\StockHut\obj\Debug\netcoreapp3.0\StockHut.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\patri\SOEN341Project\StockHut\StockHut\obj\Debug\netcoreapp3.0\StockHut.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\patri\SOEN341Project\StockHut\StockHut\obj\Debug\netcoreapp3.0\StockHut.csprojAssemblyReference.cache
