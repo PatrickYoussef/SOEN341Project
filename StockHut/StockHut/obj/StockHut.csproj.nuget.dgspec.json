@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\patri\\SOEN341Project\\StockHut\\StockHut\\StockHut.csproj": {}
+    "C:\\Users\\Laurent\\Documents\\GitHub\\SOEN341Project\\StockHut\\StockHut\\StockHut.csproj": {}
   },
   "projects": {
-    "C:\\Users\\patri\\SOEN341Project\\StockHut\\StockHut\\StockHut.csproj": {
+    "C:\\Users\\Laurent\\Documents\\GitHub\\SOEN341Project\\StockHut\\StockHut\\StockHut.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\patri\\SOEN341Project\\StockHut\\StockHut\\StockHut.csproj",
+        "projectUniqueName": "C:\\Users\\Laurent\\Documents\\GitHub\\SOEN341Project\\StockHut\\StockHut\\StockHut.csproj",
         "projectName": "StockHut",
-        "projectPath": "C:\\Users\\patri\\SOEN341Project\\StockHut\\StockHut\\StockHut.csproj",
-        "packagesPath": "C:\\Users\\patri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\patri\\SOEN341Project\\StockHut\\StockHut\\obj\\",
+        "projectPath": "C:\\Users\\Laurent\\Documents\\GitHub\\SOEN341Project\\StockHut\\StockHut\\StockHut.csproj",
+        "packagesPath": "C:\\Users\\Laurent\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Laurent\\Documents\\GitHub\\SOEN341Project\\StockHut\\StockHut\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\patri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Laurent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -75,6 +71,14 @@
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
               "version": "[3.0.2, 3.0.2]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
             }
           ],
           "frameworkReferences": {
