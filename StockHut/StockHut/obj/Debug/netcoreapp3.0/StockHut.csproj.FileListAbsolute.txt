@@ -48,7 +48,6 @@ C:\Users\patri\SOEN341Project\StockHut\StockHut\bin\Debug\netcoreapp3.0\Microsof
 C:\Users\patri\SOEN341Project\StockHut\StockHut\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.SpaServices.dll
 C:\Users\patri\SOEN341Project\StockHut\StockHut\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.SpaServices.Extensions.dll
 C:\Users\patri\SOEN341Project\StockHut\StockHut\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
-C:\Users\patri\SOEN341Project\StockHut\StockHut\obj\Debug\netcoreapp3.0\StockHut.csprojAssemblyReference.cache
 C:\Users\patri\SOEN341Project\StockHut\StockHut\obj\Debug\netcoreapp3.0\staticwebassets\StockHut.StaticWebAssets.Manifest.cache
 C:\Users\patri\SOEN341Project\StockHut\StockHut\obj\Debug\netcoreapp3.0\staticwebassets\StockHut.StaticWebAssets.xml
 C:\Users\patri\SOEN341Project\StockHut\StockHut\obj\Debug\netcoreapp3.0\StockHut.RazorAssemblyInfo.cache
