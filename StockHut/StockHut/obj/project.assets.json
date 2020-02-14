@@ -5321,11 +5321,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\patri\\SOEN341Project\\StockHut\\StockHut\\StockHut.csproj",
+      "projectUniqueName": "C:\\Users\\patri\\StockHut\\SOEN341Project\\StockHut\\StockHut\\StockHut.csproj",
       "projectName": "StockHut",
-      "projectPath": "C:\\Users\\patri\\SOEN341Project\\StockHut\\StockHut\\StockHut.csproj",
+      "projectPath": "C:\\Users\\patri\\StockHut\\SOEN341Project\\StockHut\\StockHut\\StockHut.csproj",
       "packagesPath": "C:\\Users\\patri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\patri\\SOEN341Project\\StockHut\\StockHut\\obj\\",
+      "outputPath": "C:\\Users\\patri\\StockHut\\SOEN341Project\\StockHut\\StockHut\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -5402,13 +5402,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\patri\\SOEN341Project\\StockHut\\StockHut\\obj\\StockHut.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
