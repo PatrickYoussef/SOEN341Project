@@ -18,7 +18,10 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1
-  }
+    },
+    login: {
+        color: 'white'
+    }
 }));
 
 function ButtonAppBar() {
@@ -40,7 +43,7 @@ function ButtonAppBar() {
             StockHut
           </Typography>
           <Button color="inherit">
-           <a href="#Home"><strong>Login</strong></a>
+              <a href="#Home" className={classes.login}><strong>Login</strong></a>
           </Button>
         </Toolbar>
       </AppBar>
