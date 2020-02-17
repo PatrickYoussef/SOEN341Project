@@ -14,7 +14,7 @@ import EmojiPeopleIcon from "@material-ui/icons/EmojiPeople";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import InfoIcon from "@material-ui/icons/Info";
-import Link from "@material-ui/core/Link";
+import { NavLink, Link } from "react-router-dom";
 
 import Home from "./Home";
 
@@ -56,14 +56,14 @@ function TemporaryDrawer() {
     >
       <List>
         {["Home", "Profile", "Friends"].map((text, index) => (
-          <ListItem button key={text}>
+          <ListItem button key={text}> 
             <ListItemIcon>
               {(() => {
                 switch (text) {
                   case "Home":
                     return <HomeIcon />;
                   case "Friends":
-                    return <EmojiPeopleIcon />;
+                        return <NavLink tag={Link} to="/counter"> <EmojiPeopleIcon/> </NavLink>;
                   case "Profile":
                     return <AccountCircleIcon />;
                   default:

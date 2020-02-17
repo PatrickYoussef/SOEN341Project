@@ -40,7 +40,7 @@ function ButtonAppBar() {
             StockHut
           </Typography>
           <Button color="inherit">
-            <strong>Login</strong>
+           <a href="#Home"><strong>Login</strong></a>
           </Button>
         </Toolbar>
       </AppBar>
