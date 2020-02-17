@@ -1,8 +1,8 @@
 ﻿import React, { Component } from 'react';
-import logo from "./stockhut.png";
-import "./login.css";
+import logo from "./../login/stockhut.png";
+import "./../login/login.css";
 
-export default class signup extends Component {
+export class Signup extends Component {
     render() {
         return (
             <div className="App">
