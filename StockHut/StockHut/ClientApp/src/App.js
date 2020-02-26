@@ -5,6 +5,7 @@ import Home from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
 import { Signup } from './components/Signup';
+import { NewsFeed } from './components/NewsFeed';
 import './custom.css'
 
 export default class App extends Component {
@@ -12,12 +13,14 @@ export default class App extends Component {
 
   render () {
     return (
-      <Layout>
-        <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} />
-        <Route path='/signup' component={Signup} />
-      </Layout>
+        <Layout>
+            <Route exact path='/' component={Home} />
+            <Route path='/counter' component={Counter} />
+            <Route path='/fetch-data' component={FetchData} />
+            <Route path='/signup' component={Signup} />
+            <Route path='/newsfeed' component={NewsFeed} />
+        </Layout>
+       
     );
   }
 }
