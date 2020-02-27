@@ -1,20 +1,21 @@
-﻿import React, { Component } from 'react';
+﻿import React, { Component, stream } from 'react';
 import { StreamApp, NotificationDropdown, FlatFeed, LikeButton, Activity, CommentList, CommentField, StatusUpdateForm } from 'react-activity-feed';
 import 'react-activity-feed/dist/index.css';
 
 export class NewsFeed extends Component {
-
+    
     render() {
+       
         return (
-            <StreamApp
+            <StreamApp //this is only an example account, should be the users info :)
                 apiKey="du8he7epvp94"
                 appId="45206"
-                token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMzRjODM0NTgtMzhjZC00N2RkLTkxZjYtN2EwMDRmMDIzMGYzIn0.byMMzY7eTP4Hz64WIF3fQFetdhNQUeYHxqVcSQ8-LLQ"
+                token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMTYwNzYyOWMtZjkzYy00YzdiLWFjMjQtMjk1NDA2NzkzYThhIn0.uycxoR39yw9b-r1EI-UMiQuQJZCKFZo3kRW9aBvkId4"
             >
                 <NotificationDropdown notify />
                 <StatusUpdateForm
                     feedGroup="timeline"
-                    userId="34c83458-38cd-47dd-91f6-7a004f0230f3" />
+                    userId="1607629c-f93c-4c7b-ac24-295406793a8a"/>
                 <FlatFeed
                     options={{ reactions: { recent: true } }}
                     notify
@@ -25,8 +26,7 @@ export class NewsFeed extends Component {
                                     <LikeButton {...props} />
                                     <CommentField
                                         activity={props.activity}
-                                        onAddReaction={props.onAddReaction} />
-                                    <CommentList activityId={props.activity.id} />
+                                        onAddReaction={props.onAddReaction} /> 
                                 </div>
                             )}
                         />
@@ -36,3 +36,9 @@ export class NewsFeed extends Component {
         );
     }
 }
+
+/**
+ * Once users are created with the token, we can add this piece of code
+ * cant do it now because the account we are logged in is inappropriate
+ * <CommentList activityId={props.activity.id} />
+  */
