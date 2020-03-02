@@ -14,12 +14,6 @@ namespace StockHut.Controllers
     {
 
         private readonly StockHutContext db = new StockHutContext();
-        private readonly IHttpContextAccessor _httpContextAccessor;
-
-        public SignInController(IHttpContextAccessor httpContextAccessor)
-        {
-            _httpContextAccessor = httpContextAccessor;
-        }
 
         // GET: api/<controller>
         [HttpGet]
@@ -39,6 +33,7 @@ namespace StockHut.Controllers
         [HttpPost]
         public void Post([FromBody]string value)
         {
+
         }
 
         // PUT api/<controller>/5
