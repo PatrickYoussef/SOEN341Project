@@ -29,7 +29,24 @@ function ButtonAppBar() {
 
     return (
         <div className={classes.root}>
-           
+            <AppBar position="static">
+                <Toolbar style={{ backgroundColor: "green" }}>
+                    <IconButton
+                        edge="start"
+                        className={classes.menuButton}
+                        color="inherit"
+                        aria-label="menu"
+                    >
+                        <TemporaryDrawer />
+                    </IconButton>
+                    <Typography variant="h6" className={classes.title} align="center">
+                        StockHut
+          </Typography>
+                    <Button color="inherit">
+                        <NavLink style={{ textDecoration: 'none', color: 'white' }} tag={Link} to="/">Login</NavLink>
+                    </Button>
+                </Toolbar>
+            </AppBar>
         </div>
     );
 }

@@ -8,9 +8,9 @@ export class Signup extends Component {
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
-                    <div className="signup-page" style={{ backgroundColor: "rgb(199, 255, 171)" }}>
+                    <div className="login-page" style={{ backgroundColor: "rgb(199, 255, 171)" }}>
                         <div className="form">
-                            <form className="register-form">
+                            <form >
                                 <input type="text" placeholder="name" />
                                 <input type="password" placeholder="password" />
                                 <input type="text" placeholder="email address" />
