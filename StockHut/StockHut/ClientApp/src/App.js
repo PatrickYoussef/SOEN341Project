@@ -6,9 +6,6 @@ import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
 import { Signup } from './components/Signup';
 import { NewsFeed } from './components/NewsFeed';
-=======
-import { StreamApp, NotificationDropdown } from 'react-activity-feed';
->>>>>>> Stashed changes
 import './custom.css'
 
 export default class App extends Component {
