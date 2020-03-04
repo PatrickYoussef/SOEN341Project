@@ -24,15 +24,19 @@ namespace StockHut.Controllers
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ActionResult<SignIn> Get(int id)
         {
-            return "value";
+            return db.SignIn.Where(user => user.Id == id).FirstOrDefault();
         }
 
         // POST api/<controller>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public ActionResult<SignIn> Post([FromBody] SignIn user)
         {
+                db.SignIn.Add(user);
+                db.SaveChanges();
+                return user;
+            
 
         }
 

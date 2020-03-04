@@ -4,12 +4,9 @@ import { Layout } from './components/Layout';
 import Home from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
-<<<<<<< Updated upstream
-import { Signup } from './components/Signup';
+import  Signup  from './components/Signup';
 import { NewsFeed } from './components/NewsFeed';
-=======
 import { StreamApp, NotificationDropdown } from 'react-activity-feed';
->>>>>>> Stashed changes
 import './custom.css'
 
 export default class App extends Component {
@@ -17,15 +14,6 @@ export default class App extends Component {
 
   render () {
     return (
-<<<<<<< Updated upstream
-        <Layout>
-            <Route exact path='/' component={Home} />
-            <Route path='/counter' component={Counter} />
-            <Route path='/fetch-data' component={FetchData} />
-            <Route path='/signup' component={Signup} />
-            <Route path='/newsfeed' component={NewsFeed} />
-        </Layout>
-=======
         <StreamApp
             apiKey="du8he7epvp94"
             appId="45206"
@@ -34,12 +22,11 @@ export default class App extends Component {
                 <Route exact path='/' component={Home} />
                 <Route path='/counter' component={Counter} />
                 <Route path='/fetch-data' component={FetchData} />
+                <Route path='/signup' component={Signup} />
+                <Route path='/newsfeed' component={NewsFeed} />
             </Layout>
             <NotificationDropdown notify />
         </StreamApp>
-      
->>>>>>> Stashed changes
-       
     );
   }
 }
