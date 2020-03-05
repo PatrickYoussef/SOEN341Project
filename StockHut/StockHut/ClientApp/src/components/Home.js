@@ -22,7 +22,7 @@ constructor(props) {
     
 componentDidMount() {
 
-    fetch('https://localhost:44314/api/SignIn')
+    fetch('https://localhost:44314/api/Users')
         .then(response => response.json())
         .then(data => {
             this.setState(prevState => {

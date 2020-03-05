@@ -18,7 +18,7 @@ class Signup extends Component {
     }
 
     componentDidMount() {
-        fetch('https://localhost:44314/api/SignIn')
+        fetch('https://localhost:44314/api/Users')
             .then(response => response.json())
             .then(data => {
                 this.setState(prevState => {
@@ -27,27 +27,30 @@ class Signup extends Component {
             })
     }
 
+    updateStateUsersError = () => {
+        this.setState({
+            message: "User already exists",
+            isNotSameUser: "false"
+        })
+        console.log(this.state);
+    }
+
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value })
     }
 
     submitHandler = (event) => {
         event.preventDefault() 
-        console.log(this.state)
 
         const { users, username, isNotSameUser } = this.state
         for (var i = 0; i < users.length; i++) {
             if (username == users[i]) {
-                this.setState({
-                    isNotSameUser: false, message: "User already exists"
-                })
+                this.updateStateUsersError()
                 break;
             }
         }
-        console.log(isNotSameUser)
-        console.log(this.state.message)
         if (isNotSameUser) {
-            axios.post('https://localhost:44314/api/SignIn', this.state)
+            axios.post('https://localhost:44314/api/Users', this.state)
                 .then(response => {
                     console.log(response)
                 })
@@ -80,8 +83,8 @@ class Signup extends Component {
                                     value={this.state.password}
                                     onChange={this.handleChange}
                                 />
-                                <NavLink to="/newsfeed" type="Submit" onClick={this.handleUser}>Create Account</NavLink>
-                                {/*<button to="/newsfeed" type="Submit" onClick={this.handleUser}>Create Account</button>*/}
+                                {/*<NavLink to="/newsfeed" type="Submit" onClick={this.handleUser}>Create Account</NavLink>*/}
+                                <button type="Submit" onClick={this.handleUser}>Create Account</button>
                                 <p className="message">Or <a href="/Home">Sign In</a></p>
                             </form>
                         </div>
