@@ -15,21 +15,23 @@ namespace StockHut.Models
         {
         }
 
-        public virtual DbSet<SignIn> SignIn { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=stockhut.database.windows.net;Database=StockHut;User Id=PatrickYoussef;Password=Concordia.10");
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=soen341.database.windows.net;Database=StockHut;User Id=stockhut;Password=Concordia.10");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<SignIn>(entity =>
+            modelBuilder.Entity<Users>(entity =>
             {
+                entity.ToTable("users");
+
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Password)

@@ -1,1 +1,1 @@
-﻿//Scaffold-DbContext 'Server=stockhut.database.windows.net;Database=StockHut;User Id=PatrickYoussef;Password=Concordia.10' Microsoft.EntityFraC:\Users\Jennifer Asmar\Documents\GitHub\SOEN341Project\StockHut\StockHut\DbContext-StockHut.csmeworkCore.SqlServer -OutputDir Models
+﻿//Scaffold-DbContext 'Server=soen341.database.windows.net;Database=StockHut;User Id=stockhut;Password=Concordia.10' Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Tables

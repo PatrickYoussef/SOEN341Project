@@ -10,35 +10,34 @@ namespace StockHut.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class SignInController : Controller
+    public class UsersController : Controller
     {
 
         private readonly StockHutContext db = new StockHutContext();
-        private readonly IHttpContextAccessor _httpContextAccessor;
-
-        public SignInController(IHttpContextAccessor httpContextAccessor)
-        {
-            _httpContextAccessor = httpContextAccessor;
-        }
 
         // GET: api/<controller>
         [HttpGet]
-        public ActionResult<IEnumerable<SignIn>> Get()
+        public ActionResult<IEnumerable<Users>> Get()
         {
-            return db.SignIn.ToList();
+            return db.Users.ToList();
         }
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ActionResult<Users> Get(int id)
         {
-            return "value";
+            return db.Users.Where(user => user.Id == id).FirstOrDefault();
         }
 
         // POST api/<controller>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public ActionResult<Users> Post([FromBody] Users user)
         {
+                db.Users.Add(user);
+                db.SaveChanges();
+                return user;
+            
+
         }
 
         // PUT api/<controller>/5
