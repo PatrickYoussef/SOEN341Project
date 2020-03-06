@@ -7,12 +7,12 @@ export class NewsFeed extends Component {
     
     render() {
     //const client = stream.connect('5y6k3egn3yzs', 'wp5frj3m5dbzcngp3nsqrrahuu4dx7umrtvud8bvdbm929nr2rvrzmrvjg6fe424');
-    let userToken = stream.createUserToken("user-two");
+    //let userToken = stream.createUserToken("user-two");
         return (
             <StreamApp //this is only an example account, should be the users info :)
                 apiKey = "5y6k3egn3yzs"
                 appId="71363"
-                token={userToken}> 
+                token= "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidXNlci1vbmUifQ.5goB9AX3-mz3TUpfdeZ8Fcj-E_Q_W7fe_T-FQTHdGvQ" 
             >
         <NotificationDropdown notify />
                 <StatusUpdateForm
