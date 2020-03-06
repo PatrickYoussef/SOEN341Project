@@ -1,8 +1,9 @@
 ﻿import React, { Component } from 'react';
 import logo from "./../login/stockhut.png";
 import "./../login/login.css";
-import axios from 'axios'
-import { NavLink } from 'react-router-dom'
+import axios from 'axios';
+import Button from "@material-ui/core/Button";
+import { NavLink, Link } from 'react-router-dom';
 
 class Signup extends Component {
 
@@ -84,8 +85,10 @@ class Signup extends Component {
                                     onChange={this.handleChange}
                                 />
                                 {/*<NavLink to="/newsfeed" type="Submit" onClick={this.handleUser}>Create Account</NavLink>*/}
-                                <button type="Submit" onClick={this.handleUser}>Create Account</button>
-                                <p className="message">Or <a href="/Home">Sign In</a></p>
+                                <Button color="inherit">
+                                    <NavLink to="/newsfeed" type="Submit" onClick={this.handleUser} style={{ textDecoration: 'none', color: 'white' }} >Create Account</NavLink>
+                                </Button>
+                                <NavLink to="/" tag={Link} style={{ textDecoration: 'none', color: 'green' }}>Sign In</NavLink>
                             </form>
                         </div>
                     </div>
