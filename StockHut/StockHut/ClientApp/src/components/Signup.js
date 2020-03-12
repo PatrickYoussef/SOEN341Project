@@ -12,8 +12,7 @@ class Signup extends Component {
             username: "",
             password: "",
             users: [],
-            message: "",
-            isNotSameUser: true
+            errors: []
         }
     }
 
@@ -27,29 +26,51 @@ class Signup extends Component {
             })
     }
 
-    updateStateUsersError = () => {
-        this.setState({
-            message: "User already exists",
-            isNotSameUser: "false"
+    showValidationErr(elm, msg) {
+        this.setState((prevState) => ({
+            errors: [
+                ...prevState.errors, {
+                    elm,
+                    msg
+                }
+            ]
+        }));
+    }
+
+    clearValidationErr(elm) {  
+        this.setState((prevState) => {
+            let newArr = [];
+            for(let err of prevState.errors) {
+                if (elm != err.elm) {
+                    newArr.push(err);
+                }
+            }
+            return { errors: newArr };
         })
-        console.log(this.state);
     }
 
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value })
+        this.clearValidationErr("username")
+        this.clearValidationErr("password")
     }
 
     submitHandler = (event) => {
-        event.preventDefault() 
+        event.preventDefault();
 
-        const { users, username, isNotSameUser } = this.state
-        for (var i = 0; i < users.length; i++) {
-            if (username == users[i]) {
-                this.updateStateUsersError()
-                break;
-            }
+        let check = true
+
+        if (this.state.username == "" ) {
+            this.showValidationErr("username", "Username cannot be empty !")
+            check = false
+        } if (this.state.password == "") {
+            this.showValidationErr("password", "Password cannot be empty !")
+            check = false
+        } if (this.state.users.indexOf(this.state.username) != -1) {
+            this.showValidationErr("username", "Username already exists !")
+            check = false
         }
-        if (isNotSameUser) {
+        if (check) {
             axios.post('https://localhost:44314/api/Users', this.state)
                 .then(response => {
                     console.log(response)
@@ -58,24 +79,39 @@ class Signup extends Component {
                     console.log(error)
                 })
         }
+
+        
     }
 
+   
+
     render() {
+        let usernameErr = null, passwordErr = null
+
+        for (let err of this.state.errors) {
+            if (err.elm == "username") {
+                usernameErr = err.msg
+            }
+            if (err.elm == "password") {
+                passwordErr = err.msg
+            }
+        }
         return (
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     <div className="login-page" style={{ backgroundColor: "rgb(199, 255, 171)" }}>
-                        <div>{this.state.message}</div>
                         <div className="form">
                             <form onSubmit={this.submitHandler}>
+                                <small>{usernameErr ? usernameErr : ""}</small>
                                 <input
                                     type="text"
-                                    placeholder="name"
+                                    placeholder="username"
                                     name="username"
                                     value={this.state.username}
                                     onChange={this.handleChange}
                                 />
+                                <small>{passwordErr ? passwordErr : ""}</small>
                                 <input
                                     type="password"
                                     placeholder="password"
@@ -84,8 +120,8 @@ class Signup extends Component {
                                     onChange={this.handleChange}
                                 />
                                 {/*<NavLink to="/newsfeed" type="Submit" onClick={this.handleUser}>Create Account</NavLink>*/}
-                                <button type="Submit" onClick={this.handleUser}>Create Account</button>
-                                <p className="message">Or <a href="/Home">Sign In</a></p>
+                                <button type="Submit">Create Account</button>
+                                <p className="message">Or <NavLink exact to="/">Sign In</NavLink></p>
                             </form>
                         </div>
                     </div>
