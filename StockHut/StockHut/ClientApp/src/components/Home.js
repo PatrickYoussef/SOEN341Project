@@ -124,8 +124,10 @@ componentDidMount() {
                                     value={this.pass}
                                     onChange={this.handleChange}
                                 />
-                                <button typ e="Submit">Log In</button>
-                                <NavLink to="/signup">Create an account</NavLink>
+                                <button type="Submit">
+                                    <NavLink to="/newsfeed" style={{ textDecoration: 'none', color: 'white' }} >Login</NavLink>
+                               </button>
+                                <p className="message">Or <NavLink exact to="/signup" style={{ textDecoration: 'none', color: 'green' }}>Create an account</NavLink></p>
                             </form>
                         </div>
                     </div>

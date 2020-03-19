@@ -1,21 +1,25 @@
 ﻿import React, { Component, stream } from 'react';
 import { StreamApp, NotificationDropdown, FlatFeed, LikeButton, Activity, CommentList, CommentField, StatusUpdateForm } from 'react-activity-feed';
 import 'react-activity-feed/dist/index.css';
+require('dotenv').config();
 
+const secret = process.env.STREAM_API_SECRET;
+const ayah = "ayah";
+const gg = "";
 export class NewsFeed extends Component {
     
     render() {
        
         return (
             <StreamApp //this is only an example account, should be the users info :)
-                apiKey="du8he7epvp94"
-                appId="45206"
-                token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMTYwNzYyOWMtZjkzYy00YzdiLWFjMjQtMjk1NDA2NzkzYThhIn0.uycxoR39yw9b-r1EI-UMiQuQJZCKFZo3kRW9aBvkId4"
+                apiKey="5y6k3egn3yzs"
+                appId="71363"
+                token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidXNlci1vbmUifQ.5goB9AX3-mz3TUpfdeZ8Fcj-E_Q_W7fe_T-FQTHdGvQ"
             >
                 <NotificationDropdown notify />
                 <StatusUpdateForm
                     feedGroup="timeline"
-                    userId="1607629c-f93c-4c7b-ac24-295406793a8a"/>
+                    userId="user-one"/>
                 <FlatFeed
                     options={{ reactions: { recent: true } }}
                     notify

@@ -120,8 +120,10 @@ class Signup extends Component {
                                     onChange={this.handleChange}
                                 />
                                 {/*<NavLink to="/newsfeed" type="Submit" onClick={this.handleUser}>Create Account</NavLink>*/}
-                                <button type="Submit">Create Account</button>
-                                <p className="message">Or <NavLink exact to="/">Sign In</NavLink></p>
+                                <button type="Submit">
+                                    <NavLink to="/newsfeed" style={{ textDecoration: 'none', color: 'white' }} >Create Account</NavLink>
+                                </button>
+                                <p className="message">Or <NavLink exact to="/" style={{ textDecoration: 'none', color: 'green' }}>Sign In</NavLink></p>
                             </form>
                         </div>
                     </div>
