@@ -2,7 +2,7 @@
 import logo from "./../login/stockhut.png";
 import "./../login/login.css";
 import axios from 'axios'
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 
 class Signup extends Component {
 
@@ -15,6 +15,8 @@ class Signup extends Component {
             errors: []
         }
     }
+
+    
 
     componentDidMount() {
         fetch('https://localhost:44314/api/Users')
@@ -78,6 +80,8 @@ class Signup extends Component {
                 .catch(error => {
                     console.log(error)
                 })
+
+            this.props.history.push("newsfeed");
         }
 
         
@@ -103,7 +107,7 @@ class Signup extends Component {
                     <div className="login-page" style={{ backgroundColor: "rgb(199, 255, 171)" }}>
                         <div className="form">
                             <form onSubmit={this.submitHandler}>
-                                <small>{usernameErr ? usernameErr : ""}</small>
+                                <small style={{ fontSize: 12 }}>{usernameErr ? usernameErr : ""}</small>
                                 <input
                                     type="text"
                                     placeholder="username"
@@ -111,7 +115,7 @@ class Signup extends Component {
                                     value={this.state.username}
                                     onChange={this.handleChange}
                                 />
-                                <small>{passwordErr ? passwordErr : ""}</small>
+                                <small style={{ fontSize: 12 }}>{passwordErr ? passwordErr : ""}</small> 
                                 <input
                                     type="password"
                                     placeholder="password"
@@ -119,9 +123,10 @@ class Signup extends Component {
                                     value={this.state.password}
                                     onChange={this.handleChange}
                                 />
-                                {/*<NavLink to="/newsfeed" type="Submit" onClick={this.handleUser}>Create Account</NavLink>*/}
-                                <button type="Submit">Create Account</button>
-                                <p className="message">Or <NavLink exact to="/">Sign In</NavLink></p>
+                                <button type="Submit"> Create Account
+                                    {/*<NavLink to="/newsfeed" style={{ textDecoration: 'none', color: 'white' }} onClick={() => this.submitHandler}>Create Account</NavLink>*/}
+                                </button>
+                                <p className="message">Or <NavLink exact to="/" style={{ textDecoration: 'none', color: 'green' }}>Sign In</NavLink></p>
                             </form>
                         </div>
                     </div>
@@ -131,4 +136,4 @@ class Signup extends Component {
     }
 }
 
-export default Signup
+export default withRouter(Signup);

@@ -30,8 +30,10 @@ class LogIn extends React.Component {
                                     value={this.props.pass}
                                     onChange={this.props.handleChange}
                                 />
-                                <button>login</button>
-                                <NavLink tag={Link} to="/signup">Create an account</NavLink>
+                                <button>
+                                    <NavLink to="/newsfeed" style={{ textDecoration: 'none', color: 'white' }} >Login</NavLink>
+                                </button>
+                                <p className="message">Or <NavLink exact to="/signup" style={{ textDecoration: 'none', color: 'green' }}>Create an account</NavLink></p>
                             </form>
                         </div>
                     </div>

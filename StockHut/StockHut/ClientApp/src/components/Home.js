@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import logo from "../login/stockhut.png";
 import "../login/login.css";
 import { Route } from "react-router"
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import LogIn from "./LogIn"
 
 class Home extends Component {
@@ -77,9 +77,14 @@ componentDidMount() {
         if (check) {
             console.log("in the check")
             let userIndex = this.state.username.indexOf(this.state.user)
-            let passIndex = this.state.pass.indexOf(this.state.pass)
-            if (userIndex != -1 && passIndex != -1) {
-                console.log(" in the if")
+            let passIndex = this.state.password.indexOf(this.state.pass)
+            console.log(userIndex, passIndex, this.state.pass)
+            if (userIndex != -1 && passIndex != -1 && userIndex == passIndex) {
+                this.props.history.push("newsfeed")
+            } else if (userIndex == -1) {
+                this.showValidationErr("user", "Username does not exist !")
+            } else if (userIndex != -1 && userIndex != -1 && userIndex != passIndex) {
+                this.showValidationErr("user", "Username and password not compatible !")
             }
         }
         
@@ -108,7 +113,7 @@ componentDidMount() {
                     >
                         <div className="form">
                             <form className="login-form" onSubmit={this.submitHandler}>
-                                <small>{usernameErr ? usernameErr : ""}</small>
+                                <small style={{ fontSize: 12 }}>{usernameErr ? usernameErr : ""}</small>
                                 <input
                                     type="text"
                                     placeholder="username"
@@ -116,7 +121,7 @@ componentDidMount() {
                                     value={this.user}
                                     onChange={this.handleChange}
                                 />
-                                <small>{passwordErr ? passwordErr : ""}</small>
+                                <small style={{ fontSize: 12 }}>{passwordErr ? passwordErr : ""}</small>
                                 <input
                                     type="password"
                                     placeholder="password"
@@ -124,8 +129,10 @@ componentDidMount() {
                                     value={this.pass}
                                     onChange={this.handleChange}
                                 />
-                                <button typ e="Submit">Log In</button>
-                                <NavLink to="/signup">Create an account</NavLink>
+                                <button type="Submit" style={{ textDecoration: 'none', color: 'white' }}> Login
+                                    {/*<NavLink to="/newsfeed" style={{ textDecoration: 'none', color: 'white' }} >Login</NavLink>*/}
+                               </button>
+                                <p className="message">Or <NavLink exact to="/signup" style={{ textDecoration: 'none', color: 'green' }}>Create an account</NavLink></p>
                             </form>
                         </div>
                     </div>
@@ -135,4 +142,4 @@ componentDidMount() {
     }
 };
 
-export default Home;
+export default withRouter(Home);
