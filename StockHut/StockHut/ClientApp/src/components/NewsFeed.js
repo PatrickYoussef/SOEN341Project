@@ -1,11 +1,14 @@
 ﻿import React, { Component, stream } from 'react';
 import { StreamApp, NotificationDropdown, FlatFeed, LikeButton, Activity, CommentList, CommentField, StatusUpdateForm } from 'react-activity-feed';
 import 'react-activity-feed/dist/index.css';
-require('dotenv').config();
+//require('dotenv').config();
+//const path = require('path');
+//const currentPath = path.join(__dirname);
+//const basePath = currentPath + '/.env';
+//const dotenv = require('dotenv-webpack');
+//const env = dotenv.parsed;
+const secret = process.env.﻿REACT_APP_SECRET;
 
-const secret = process.env.STREAM_API_SECRET;
-const ayah = "ayah";
-const gg = "";
 export class NewsFeed extends Component {
     
     render() {
