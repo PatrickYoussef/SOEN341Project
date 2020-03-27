@@ -44,7 +44,7 @@ function ButtonAppBar() {
                         StockHut
                     </Typography>
                     <Button color="inherit">
-                        <NavLink style={{ textDecoration: 'none', color: 'white' }} tag={Link} to="/">Login</NavLink>
+                        <NavLink style={{ textDecoration: 'none', color: 'white' }} tag={Link} to="/">Logout</NavLink>
                     </Button>
                 </Toolbar>
             </AppBar>
