@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using StockHut.Interfaces;
 using StockHut.Models;
 
 namespace StockHut.Controllers
@@ -13,7 +14,13 @@ namespace StockHut.Controllers
     public class UsersController : Controller
     {
 
+        ITokenCreator TokenCreator;
         private readonly StockHutContext db = new StockHutContext();
+
+        public UsersController(ITokenCreator tokenCreator)
+        {
+            TokenCreator = tokenCreator;
+        }
 
         // GET: api/<controller>
         [HttpGet]
@@ -33,9 +40,11 @@ namespace StockHut.Controllers
         [HttpPost]
         public ActionResult<Users> Post([FromBody] Users user)
         {
-                db.Users.Add(user);
-                db.SaveChanges();
-                return user;
+            string token = TokenCreator.CreateToken(user.Id);
+            user.Token = token;
+            db.Users.Add(user);
+            db.SaveChanges();
+            return user;
             
 
         }

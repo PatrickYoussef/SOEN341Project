@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using StockHut.Interfaces;
+using StockHut.Models;
 
 namespace StockHut
 {
@@ -28,6 +30,7 @@ namespace StockHut
             {
                 configuration.RootPath = "ClientApp/build";
             });
+            services.AddSingleton<ITokenCreator,TokenCreator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

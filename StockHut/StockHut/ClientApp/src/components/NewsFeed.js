@@ -1,13 +1,6 @@
-﻿import React, { Component, stream } from 'react';
-import { StreamApp, NotificationDropdown, FlatFeed, LikeButton, Activity, CommentList, CommentField, StatusUpdateForm } from 'react-activity-feed';
+﻿import React, { Component } from 'react';
+import { StreamApp, NotificationDropdown, FlatFeed, LikeButton, Activity, CommentList, CommentField, StatusUpdateForm, UserBar } from 'react-activity-feed';
 import 'react-activity-feed/dist/index.css';
-//require('dotenv').config();
-//const path = require('path');
-//const currentPath = path.join(__dirname);
-//const basePath = currentPath + '/.env';
-//const dotenv = require('dotenv-webpack');
-//const env = dotenv.parsed;
-const secret = process.env.﻿REACT_APP_SECRET;
 
 export class NewsFeed extends Component {
     
@@ -15,14 +8,20 @@ export class NewsFeed extends Component {
        
         return (
             <StreamApp //this is only an example account, should be the users info :)
-                apiKey="5y6k3egn3yzs"
-                appId="71363"
-                token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidXNlci1vbmUifQ.5goB9AX3-mz3TUpfdeZ8Fcj-E_Q_W7fe_T-FQTHdGvQ"
+                apiKey="urzuchjm2333"
+                appId="72302"
+                token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMCJ9.bvSyZltDDtXhpEIXrqeyTCxRSTwU3eBfKodPt3pZL0s"
             >
+                
                 <NotificationDropdown notify />
                 <StatusUpdateForm
-                    feedGroup="timeline"
-                    userId="user-one"/>
+                    feedGroup="user"
+                    userId="0"
+                />
+                <UserBar
+                            username="Jenn"
+                            avatar="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" >
+                        </UserBar> 
                 <FlatFeed
                     options={{ reactions: { recent: true } }}
                     notify
@@ -37,8 +36,11 @@ export class NewsFeed extends Component {
                                 </div>
                             )}
                         />
-                    }
+                       
+                    } 
+                    doFeedRequest
                 />
+               
             </StreamApp>
         );
     }

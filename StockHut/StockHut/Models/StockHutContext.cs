@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using StockHut.Interfaces;
 
 namespace StockHut.Models
 {
@@ -8,6 +9,7 @@ namespace StockHut.Models
     {
         public StockHutContext()
         {
+          
         }
 
         public StockHutContext(DbContextOptions<StockHutContext> options)
@@ -43,6 +45,11 @@ namespace StockHut.Models
                     .HasColumnName("username")
                     .HasMaxLength(255)
                     .IsUnicode(false);
+
+                entity.Property(e => e.Token)
+                   .HasColumnName("token")
+                   .HasMaxLength(255)
+                   .IsUnicode(false);
             });
 
             OnModelCreatingPartial(modelBuilder);
