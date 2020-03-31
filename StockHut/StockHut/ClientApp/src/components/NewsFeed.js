@@ -1,11 +1,14 @@
-﻿import React, { Component } from 'react';
+import React, { Component } from 'react';
 import { StreamApp, NotificationDropdown, FlatFeed, LikeButton, Activity, CommentList, CommentField, StatusUpdateForm, UserBar } from 'react-activity-feed';
 import 'react-activity-feed/dist/index.css';
+
+
+
 
 export class NewsFeed extends Component {
     
     render() {
-       
+        
         return (
             <StreamApp //this is only an example account, WE SHOULD PASS THE CURRRENT USER AND GET ITS TOKEN AND FEEDID     so token is token and userId is feedId
                 apiKey="urzuchjm2333"
