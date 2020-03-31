@@ -8,20 +8,21 @@ import  Signup  from './components/Signup';
 import { NewsFeed }  from './components/NewsFeed';
 import './custom.css'
 
+
 export default class App extends Component {
   static displayName = App.name;
 
-  render () {
-    return (
-
+      render () { 
+        return (
+           
             <Layout>
                 <Route exact path='/' component={Home} />
+                <Route path='/signup' component={Signup} />
                 <Route path='/counter' component={Counter} />
                 <Route path='/fetch-data' component={FetchData} />
-                <Route path='/signup' component={Signup} />
                 <Route path='/newsfeed' component={NewsFeed} />
             </Layout>
-         
-    );
-  }
+            
+        );
+      }
 }

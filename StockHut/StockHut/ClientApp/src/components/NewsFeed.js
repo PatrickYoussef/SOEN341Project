@@ -1,16 +1,19 @@
 ﻿import React, { Component, stream } from 'react';
+import { NavMenu } from "./Navbar/NavMenu";
 import { StreamApp, NotificationDropdown, FlatFeed, LikeButton, Activity, CommentList, CommentField, StatusUpdateForm } from 'react-activity-feed';
 import 'react-activity-feed/dist/index.css';
 require('dotenv').config();
 
-const secret = process.env.STREAM_API_SECRET;
-const ayah = "ayah";
-const gg = "";
+
+
+
 export class NewsFeed extends Component {
     
     render() {
-       
+        
         return (
+            <div>
+            <NavMenu />
             <StreamApp //this is only an example account, should be the users info :)
                 apiKey="5y6k3egn3yzs"
                 appId="71363"
@@ -35,8 +38,10 @@ export class NewsFeed extends Component {
                             )}
                         />
                     }
-                />
-            </StreamApp>
+                    />
+                
+                </StreamApp>
+                </div>
         );
     }
 }
