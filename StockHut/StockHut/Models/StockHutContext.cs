@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using StockHut.Interfaces;
 
 namespace StockHut.Models
 {
@@ -9,7 +8,6 @@ namespace StockHut.Models
     {
         public StockHutContext()
         {
-          
         }
 
         public StockHutContext(DbContextOptions<StockHutContext> options)
@@ -36,8 +34,18 @@ namespace StockHut.Models
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
+                entity.Property(e => e.FeedId)
+                    .HasColumnName("feedID")
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Password)
                     .HasColumnName("password")
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Token)
+                    .HasColumnName("token")
                     .HasMaxLength(255)
                     .IsUnicode(false);
 
@@ -45,16 +53,6 @@ namespace StockHut.Models
                     .HasColumnName("username")
                     .HasMaxLength(255)
                     .IsUnicode(false);
-
-                entity.Property(e => e.Token)
-                   .HasColumnName("token")
-                   .HasMaxLength(255)
-                   .IsUnicode(false);
-
-                entity.Property(e => e.FeedID)
-                  .HasColumnName("feedID")
-                  .HasMaxLength(255)
-                  .IsUnicode(false);
             });
 
             OnModelCreatingPartial(modelBuilder);

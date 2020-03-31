@@ -40,7 +40,7 @@ namespace StockHut.Controllers
         public ActionResult<Users> Post([FromBody] Users user)
         {
             string feedId = Guid.NewGuid().ToString("N");
-            user.FeedID = feedId;
+            user.FeedId = feedId;
             string token = TokenCreator.CreateToken(user);
             user.Token = token;
             db.Users.Add(user);

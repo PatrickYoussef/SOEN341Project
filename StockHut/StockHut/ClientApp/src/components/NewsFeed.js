@@ -7,7 +7,7 @@ export class NewsFeed extends Component {
     render() {
        
         return (
-            <StreamApp //this is only an example account, should be the users info :)
+            <StreamApp //this is only an example account, WE SHOULD PASS THE CURRRENT USER AND GET ITS TOKEN AND FEEDID     so token is token and userId is feedId
                 apiKey="urzuchjm2333"
                 appId="72302"
                 token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYTIwNDhmN2MzZjk5NGQ2YTg2YjVmOWQxNDg3YjZjNzUifQ.zjqtFVhRRWX6-Le2-lSpyDBF8M76FSpg7JiKFfKn4qk"//**********

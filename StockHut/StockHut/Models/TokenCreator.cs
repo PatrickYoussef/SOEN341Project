@@ -18,15 +18,15 @@ namespace StockHut.Models
         public string CreateToken(Models.Users user)
         {
             StreamClient client = ConnectStream();
-            string token = client.CreateUserSessionToken(user.FeedID);
+            string token = client.CreateUserSessionToken(user.FeedId);
             var userData = new Dictionary<string, object>()
             {
                 {"name", user.Username },
                 {"occupation", ""},
                 {"gender", ""},
             };
-            client.Users.Add(user.FeedID, userData, true);
-            var userFeed1 = client.Feed("timeline", user.FeedID);
+            client.Users.Add(user.FeedId, userData, true);
+            var userFeed1 = client.Feed("timeline", user.FeedId);
            
             return token;
         }
