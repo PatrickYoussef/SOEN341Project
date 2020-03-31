@@ -15,12 +15,21 @@ namespace StockHut.Models
             return client;
         }
 
-        public string CreateToken(int id)//*******add in tbale an id section :D
+        public string CreateToken(Models.Users user)
         {
             StreamClient client = ConnectStream();
-            string token = client.CreateUserSessionToken(id+"");
-            var userFeed1 = client.Feed("user", (id + ""));
+            string token = client.CreateUserSessionToken(user.FeedID);
+            var userData = new Dictionary<string, object>()
+            {
+                {"name", user.Username },
+                {"occupation", ""},
+                {"gender", ""},
+            };
+            client.Users.Add(user.FeedID, userData, true);
+            var userFeed1 = client.Feed("timeline", user.FeedID);
+           
             return token;
         }
+
     }
 }

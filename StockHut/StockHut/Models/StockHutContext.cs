@@ -50,6 +50,11 @@ namespace StockHut.Models
                    .HasColumnName("token")
                    .HasMaxLength(255)
                    .IsUnicode(false);
+
+                entity.Property(e => e.FeedID)
+                  .HasColumnName("feedID")
+                  .HasMaxLength(255)
+                  .IsUnicode(false);
             });
 
             OnModelCreatingPartial(modelBuilder);

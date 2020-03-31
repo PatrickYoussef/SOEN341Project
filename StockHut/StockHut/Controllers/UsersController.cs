@@ -13,8 +13,7 @@ namespace StockHut.Controllers
     [Route("api/[controller]")]
     public class UsersController : Controller
     {
-
-        ITokenCreator TokenCreator;
+        readonly ITokenCreator TokenCreator;
         private readonly StockHutContext db = new StockHutContext();
 
         public UsersController(ITokenCreator tokenCreator)
@@ -40,7 +39,9 @@ namespace StockHut.Controllers
         [HttpPost]
         public ActionResult<Users> Post([FromBody] Users user)
         {
-            string token = TokenCreator.CreateToken(user.Id);
+            string feedId = Guid.NewGuid().ToString("N");
+            user.FeedID = feedId;
+            string token = TokenCreator.CreateToken(user);
             user.Token = token;
             db.Users.Add(user);
             db.SaveChanges();

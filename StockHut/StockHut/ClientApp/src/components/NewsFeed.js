@@ -10,19 +10,19 @@ export class NewsFeed extends Component {
             <StreamApp //this is only an example account, should be the users info :)
                 apiKey="urzuchjm2333"
                 appId="72302"
-                token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMCJ9.bvSyZltDDtXhpEIXrqeyTCxRSTwU3eBfKodPt3pZL0s"
+                token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYTIwNDhmN2MzZjk5NGQ2YTg2YjVmOWQxNDg3YjZjNzUifQ.zjqtFVhRRWX6-Le2-lSpyDBF8M76FSpg7JiKFfKn4qk"//**********
             >
                 
                 <NotificationDropdown notify />
                 <StatusUpdateForm
-                    feedGroup="user"
-                    userId="0"
+                   
+                    feedGroup="timeline"
+                    userId="a2048f7c3f994d6a86b5f9d1487b6c75"//**********
                 />
-                <UserBar
-                            username="Jenn"
-                            avatar="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" >
-                        </UserBar> 
+             
                 <FlatFeed
+                    feedGroup="timeline"
+                    userId="a2048f7c3f994d6a86b5f9d1487b6c75"//**********
                     options={{ reactions: { recent: true } }}
                     notify
                     Activity={(props) =>
@@ -32,13 +32,12 @@ export class NewsFeed extends Component {
                                     <LikeButton {...props} />
                                     <CommentField
                                         activity={props.activity}
-                                        onAddReaction={props.onAddReaction} /> 
+                                        onAddReaction={props.onAddReaction} />
+                                    <CommentList activityId={props.activity.id} />
                                 </div>
                             )}
                         />
-                       
-                    } 
-                    doFeedRequest
+                    }   
                 />
                
             </StreamApp>

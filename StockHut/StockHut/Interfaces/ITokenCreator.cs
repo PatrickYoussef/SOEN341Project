@@ -9,6 +9,6 @@ namespace StockHut.Interfaces
     public interface ITokenCreator
     {
         public StreamClient ConnectStream();
-        public string CreateToken(int id);
+        public string CreateToken(Models.Users user);
     }
 }
