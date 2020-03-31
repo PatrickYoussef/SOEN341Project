@@ -4,6 +4,7 @@ import "../login/login.css";
 import { Route } from "react-router"
 import { NavLink, withRouter } from "react-router-dom";
 import LogIn from "./LogIn"
+import { NewsFeed } from "./NewsFeed";
 
 class Home extends Component {
 
@@ -80,7 +81,7 @@ componentDidMount() {
             let passIndex = this.state.password.indexOf(this.state.pass)
             console.log(userIndex, passIndex, this.state.pass)
             if (userIndex != -1 && passIndex != -1 && userIndex == passIndex) {
-                this.props.history.push("newsfeed")
+                this.props.history.push("newsfeed", { name: this.state.user })
             } else if (userIndex == -1) {
                 this.showValidationErr("user", "Username does not exist !")
             } else if (userIndex != -1 && userIndex != -1 && userIndex != passIndex) {
@@ -129,9 +130,7 @@ componentDidMount() {
                                     value={this.pass}
                                     onChange={this.handleChange}
                                 />
-                                <button type="Submit" style={{ textDecoration: 'none', color: 'white' }}> Login
-                                    {/*<NavLink to="/newsfeed" style={{ textDecoration: 'none', color: 'white' }} >Login</NavLink>*/}
-                               </button>
+                                <button type="Submit" style={{ textDecoration: 'none', color: 'white' }}> Login</button>
                                 <p className="message">Or <NavLink exact to="/signup" style={{ textDecoration: 'none', color: 'green' }}>Create an account</NavLink></p>
                             </form>
                         </div>
@@ -143,3 +142,4 @@ componentDidMount() {
 };
 
 export default withRouter(Home);
+//<NewsFeed name={this.props.username}/>

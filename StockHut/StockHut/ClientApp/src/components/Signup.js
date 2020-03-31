@@ -16,8 +16,6 @@ class Signup extends Component {
         }
     }
 
-    
-
     componentDidMount() {
         fetch('https://localhost:44314/api/Users')
             .then(response => response.json())
@@ -80,8 +78,8 @@ class Signup extends Component {
                 .catch(error => {
                     console.log(error)
                 })
-
-            this.props.history.push("newsfeed");
+            
+            this.props.history.push("newsfeed", { name: this.state.username });
         }
 
         
