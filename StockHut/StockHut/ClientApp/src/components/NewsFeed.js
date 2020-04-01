@@ -5,37 +5,53 @@ import { NavMenu } from "./Navbar/NavMenu";
 import axios from 'axios'
 
 export class NewsFeed extends Component {
+
+    constructor() {
+        super()
+        this.state = {
+            id: -1,
+            username: "laurent",
+            password: "",
+            token: "",
+            feedId: ""
+        }
+    }
+
+    componentDidMount() {
+        fetch('https://localhost:44314/api/Users/UserName/' + this.props.location.state.username)
+            .then(response => response.json())
+            .then(data => {
+                this.state.id = data.id;
+                this.state.username = data.username;
+                this.state.password = data.password;
+                this.state.token = data.token;
+                this.state.feedId = data.feedId;
+                console.log(this.state)
+            })
+    }
     
     render() {
-        let user = this.props.location.state;
-        //let users = [];
-        //fetch('https://localhost:44314/api/Users')
-        //    .then(response => response.json())
-        //    .then(data => {
-        //        this.setState(prevState => {
-        //            users: data.map((obj) => { users.push(obj.username) })
-        //        })
-        //    })
-        let currentUser = axios.get('https://localhost:44314/api/name/4', user.name);
-        let s = "";
+        let token = this.state.token
+        let id = this.state.feedId
+
         return (
             <div>
                 <NavMenu />
                 <StreamApp //this is only an example account, WE SHOULD PASS THE CURRRENT USER AND GET ITS TOKEN AND FEEDID     so token is token and userId is feedId
                     apiKey="urzuchjm2333"
                     appId="72302"
-                    token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYTIwNDhmN2MzZjk5NGQ2YTg2YjVmOWQxNDg3YjZjNzUifQ.zjqtFVhRRWX6-Le2-lSpyDBF8M76FSpg7JiKFfKn4qk"//**********
+                    token={token}//**********
                 >
                 
                     <NotificationDropdown notify />
                     <StatusUpdateForm
                         feedGroup="timeline"
-                        userId="a2048f7c3f994d6a86b5f9d1487b6c75"//**********
+                        userId={id}//**********
                     />
              
                     <FlatFeed
                         feedGroup="timeline"
-                        userId="a2048f7c3f994d6a86b5f9d1487b6c75"//**********
+                        userId={id}//**********
                         options={{ reactions: { recent: true } }}
                         notify
                         Activity={(props) =>

@@ -76,12 +76,12 @@ componentDidMount() {
         } 
 
         if (check) {
-            console.log("in the check")
+            //console.log("in the check")
             let userIndex = this.state.username.indexOf(this.state.user)
             let passIndex = this.state.password.indexOf(this.state.pass)
-            console.log(userIndex, passIndex, this.state.pass)
+            //console.log(userIndex, passIndex, this.state.pass)
             if (userIndex != -1 && passIndex != -1 && userIndex == passIndex) {
-                this.props.history.push("newsfeed", { name: this.state.user })
+                this.props.history.push({pathname: "newsfeed", state: { username: this.state.user } })
             } else if (userIndex == -1) {
                 this.showValidationErr("user", "Username does not exist !")
             } else if (userIndex != -1 && userIndex != -1 && userIndex != passIndex) {

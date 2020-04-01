@@ -78,8 +78,8 @@ class Signup extends Component {
                 .catch(error => {
                     console.log(error)
                 })
-            
-            this.props.history.push("newsfeed", { name: this.state.username });
+
+            this.props.history.push({ pathname: "newsfeed", state: { username: this.state.username } });
         }
 
         
@@ -121,9 +121,7 @@ class Signup extends Component {
                                     value={this.state.password}
                                     onChange={this.handleChange}
                                 />
-                                <button type="Submit"> Create Account
-                                    {/*<NavLink to="/newsfeed" style={{ textDecoration: 'none', color: 'white' }} onClick={() => this.submitHandler}>Create Account</NavLink>*/}
-                                </button>
+                                <button type="Submit"> Create Account </button>
                                 <p className="message">Or <NavLink exact to="/" style={{ textDecoration: 'none', color: 'green' }}>Sign In</NavLink></p>
                             </form>
                         </div>

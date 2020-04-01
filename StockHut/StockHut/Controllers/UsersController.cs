@@ -36,12 +36,12 @@ namespace StockHut.Controllers
         }
 
         // GET api/<controller>/4
-        [HttpGet("{name}")]
+        [HttpGet("UserName/{name}")]
         public ActionResult<Users> Get(string name)
         {
             return db.Users.Where(user => user.Username == name).FirstOrDefault();
         }
-
+        
         // POST api/<controller>
         [HttpPost]
         public ActionResult<Users> Post([FromBody] Users user)
