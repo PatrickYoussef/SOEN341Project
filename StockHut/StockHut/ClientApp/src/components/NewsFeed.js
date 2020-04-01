@@ -32,7 +32,7 @@ export class NewsFeed extends Component {
     
     render() {
         let token = this.state.token
-        let id = this.state.feedId
+        let userId = this.state.feedId
 
         return (
             <div>
@@ -40,18 +40,18 @@ export class NewsFeed extends Component {
                 <StreamApp //this is only an example account, WE SHOULD PASS THE CURRRENT USER AND GET ITS TOKEN AND FEEDID     so token is token and userId is feedId
                     apiKey="urzuchjm2333"
                     appId="72302"
-                    token={token}//**********
+                    token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYTIwNDhmN2MzZjk5NGQ2YTg2YjVmOWQxNDg3YjZjNzUifQ.zjqtFVhRRWX6-Le2-lSpyDBF8M76FSpg7JiKFfKn4qk"//**********
                 >
                 
                     <NotificationDropdown notify />
                     <StatusUpdateForm
                         feedGroup="timeline"
-                        userId={id}//**********
+                        userId="a2048f7c3f994d6a86b5f9d1487b6c75"//**********
                     />
              
                     <FlatFeed
                         feedGroup="timeline"
-                        userId={id}//**********
+                        userId="a2048f7c3f994d6a86b5f9d1487b6c75"//**********
                         options={{ reactions: { recent: true } }}
                         notify
                         Activity={(props) =>
