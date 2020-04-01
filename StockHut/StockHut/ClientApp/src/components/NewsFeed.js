@@ -10,7 +10,7 @@ export class NewsFeed extends Component {
         super()
         this.state = {
             id: -1,
-            username: "laurent",
+            username: "",
             password: "",
             token: "",
             feedId: ""
@@ -21,19 +21,18 @@ export class NewsFeed extends Component {
         fetch('https://localhost:44314/api/Users/UserName/' + this.props.location.state.username)
             .then(response => response.json())
             .then(data => {
-                this.state.id = data.id;
-                this.state.username = data.username;
-                this.state.password = data.password;
-                this.state.token = data.token;
-                this.state.feedId = data.feedId;
-                console.log(this.state)
+                this.setState({
+                    id: data.id,
+                    username: data.username,
+                    password: data.password,
+                    token: data.token,
+                    feedId: data.feedId
+                })
             })
     }
     
     render() {
-        let token = this.state.token
-        let userId = this.state.feedId
-
+        console.log(this.state)
         return (
             <div>
                 <NavMenu />
