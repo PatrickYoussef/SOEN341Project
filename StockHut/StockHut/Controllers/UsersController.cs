@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using StockHut.Interfaces;
 using StockHut.Models;
@@ -44,7 +42,7 @@ namespace StockHut.Controllers
         
         // POST api/<controller>
         [HttpPost]
-        public ActionResult<Users> Post([FromBody] Users user)
+        public ActionResult<IEnumerable<Users>> Post([FromBody] Users user)
         {
             string feedId = Guid.NewGuid().ToString("N");
             user.FeedId = feedId;
@@ -52,7 +50,7 @@ namespace StockHut.Controllers
             user.Token = token;
             db.Users.Add(user);
             db.SaveChanges();
-            return user;
+            return db.Users.ToList(); 
             
 
         }

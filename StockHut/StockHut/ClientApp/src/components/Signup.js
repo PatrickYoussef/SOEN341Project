@@ -79,7 +79,7 @@ class Signup extends Component {
                     console.log(error)
                 })
 
-            this.props.history.push({ pathname: "newsfeed", state: { username: this.state.username } });
+            this.props.history.push({ pathname: "../"})
         }
 
         

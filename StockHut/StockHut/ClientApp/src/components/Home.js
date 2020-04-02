@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import logo from "../login/stockhut.png";
 import "../login/login.css";
-import { Route } from "react-router"
 import { NavLink, withRouter } from "react-router-dom";
-import LogIn from "./LogIn"
-import { NewsFeed } from "./NewsFeed";
+
 
 class Home extends Component {
 
@@ -14,6 +12,7 @@ constructor(props) {
     this.state = {
         username: [],
         password: [],
+        allInfo:[],
         user: "",
         pass: "",
         errors: []
@@ -29,6 +28,7 @@ componentDidMount() {
             this.setState(prevState => {
                 username: data.map((obj) => { prevState.username.push(obj.username) })
                 password: data.map((obj) => { prevState.password.push(obj.password) })
+                allInfo: data.map((obj) => { prevState.allInfo.push(obj) })
             })
         })
     }
@@ -81,7 +81,7 @@ componentDidMount() {
             let passIndex = this.state.password.indexOf(this.state.pass)
             //console.log(userIndex, passIndex, this.state.pass)
             if (userIndex != -1 && passIndex != -1 && userIndex == passIndex) {
-                this.props.history.push({pathname: "newsfeed", state: { username: this.state.user } })
+                this.props.history.push({ pathname: "newsfeed", state: { users: this.state.allInfo  , username: this.state.user } })
             } else if (userIndex == -1) {
                 this.showValidationErr("user", "Username does not exist !")
             } else if (userIndex != -1 && userIndex != -1 && userIndex != passIndex) {
