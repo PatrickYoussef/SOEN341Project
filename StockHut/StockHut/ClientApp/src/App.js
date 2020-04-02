@@ -7,7 +7,6 @@ import { Counter } from "./components/Counter";
 import Signup from "./components/Signup";
 import { NewsFeed } from "./components/NewsFeed";
 import { ContactUs } from "./components/ContactUs";
-import { AboutUs } from "./components/AboutUs";
 import "./custom.css";
 
 export default class App extends Component {
@@ -22,7 +21,6 @@ export default class App extends Component {
         <Route path="/fetch-data" component={FetchData} />
         <Route path="/newsfeed" component={NewsFeed} />
         <Route path="/contactus" component={ContactUs} />
-        <Route path="/aboutus" component={AboutUs} />
       </Layout>
     );
   }
