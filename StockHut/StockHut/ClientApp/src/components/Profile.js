@@ -158,3 +158,5 @@ export default function Profile() {
 //https://stackoverflow.com/questions/43992427/how-to-display-a-image-selected-from-input-type-file-in-reactjs
 //https://reactjs.org/docs/hooks-state.html
 //https://www.youtube.com/watch?time_continue=1&v=XeiOnkEI7XI&feature=emb_title
+//Display image from <input type = "file"/> : https://stackoverflow.com/questions/43992427/how-to-display-a-image-selected-from-input-type-file-in-reactjs
+//Add value to an array: https://stackoverflow.com/questions/26505064/what-is-the-best-way-to-add-a-value-to-an-array-in-state
