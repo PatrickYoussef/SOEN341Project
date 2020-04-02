@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using StockHut.Interfaces;
 using StockHut.Models;
 
 namespace StockHut.Controllers
@@ -12,8 +11,13 @@ namespace StockHut.Controllers
     [Route("api/[controller]")]
     public class UsersController : Controller
     {
-
+        readonly ITokenCreator TokenCreator;
         private readonly StockHutContext db = new StockHutContext();
+
+        public UsersController(ITokenCreator tokenCreator)
+        {
+            TokenCreator = tokenCreator;
+        }
 
         // GET: api/<controller>
         [HttpGet]
@@ -29,13 +33,24 @@ namespace StockHut.Controllers
             return db.Users.Where(user => user.Id == id).FirstOrDefault();
         }
 
+        // GET api/<controller>/4
+        [HttpGet("UserName/{name}")]
+        public ActionResult<Users> Get(string name)
+        {
+            return db.Users.Where(user => user.Username == name).FirstOrDefault();
+        }
+        
         // POST api/<controller>
         [HttpPost]
-        public ActionResult<Users> Post([FromBody] Users user)
+        public ActionResult<IEnumerable<Users>> Post([FromBody] Users user)
         {
-                db.Users.Add(user);
-                db.SaveChanges();
-                return user;
+            string feedId = Guid.NewGuid().ToString("N");
+            user.FeedId = feedId;
+            string token = TokenCreator.CreateToken(user);
+            user.Token = token;
+            db.Users.Add(user);
+            db.SaveChanges();
+            return db.Users.ToList(); 
             
 
         }

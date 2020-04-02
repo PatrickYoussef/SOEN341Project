@@ -34,8 +34,18 @@ namespace StockHut.Models
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
+                entity.Property(e => e.FeedId)
+                    .HasColumnName("feedID")
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Password)
                     .HasColumnName("password")
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Token)
+                    .HasColumnName("token")
                     .HasMaxLength(255)
                     .IsUnicode(false);
 

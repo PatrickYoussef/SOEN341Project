@@ -5,7 +5,7 @@ import Home from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
 import  Signup  from './components/Signup';
-import { NewsFeed }  from './components/NewsFeed';
+import { NewsFeed } from './components/NewsFeed';
 import './custom.css'
 
 
