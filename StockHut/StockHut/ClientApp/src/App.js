@@ -8,7 +8,6 @@ import Signup from "./components/Signup";
 import { NewsFeed } from "./components/NewsFeed";
 import { ContactUs } from "./components/ContactUs";
 import "./custom.css";
-
 export default class App extends Component {
   static displayName = App.name;
 
