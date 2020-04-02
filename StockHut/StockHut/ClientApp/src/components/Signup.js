@@ -16,8 +16,6 @@ class Signup extends Component {
         }
     }
 
-    
-
     componentDidMount() {
         fetch('https://localhost:44314/api/Users')
             .then(response => response.json())
@@ -81,7 +79,7 @@ class Signup extends Component {
                     console.log(error)
                 })
 
-            this.props.history.push("newsfeed");
+            this.props.history.push({ pathname: "../"})
         }
 
         
@@ -123,9 +121,7 @@ class Signup extends Component {
                                     value={this.state.password}
                                     onChange={this.handleChange}
                                 />
-                                <button type="Submit"> Create Account
-                                    {/*<NavLink to="/newsfeed" style={{ textDecoration: 'none', color: 'white' }} onClick={() => this.submitHandler}>Create Account</NavLink>*/}
-                                </button>
+                                <button type="Submit"> Create Account </button>
                                 <p className="message">Or <NavLink exact to="/" style={{ textDecoration: 'none', color: 'green' }}>Sign In</NavLink></p>
                             </form>
                         </div>

@@ -1,53 +1,53 @@
-﻿import React, { Component, stream } from 'react';
-import { NavMenu } from "./Navbar/NavMenu";
-import { StreamApp, NotificationDropdown, FlatFeed, LikeButton, Activity, CommentList, CommentField, StatusUpdateForm } from 'react-activity-feed';
+import React, { Component } from 'react';
+import { StreamApp, NotificationDropdown, FlatFeed, LikeButton, Activity, CommentList, CommentField, StatusUpdateForm, UserBar } from 'react-activity-feed';
 import 'react-activity-feed/dist/index.css';
-require('dotenv').config();
-
-
-
+import { NavMenu } from "./Navbar/NavMenu";
 
 export class NewsFeed extends Component {
     
     render() {
-        
+        let userList = this.props.location.state.users
+        let username = this.props.location.state.username
+        let user  = userList.find(function (element) {
+                return element.username == username;
+            })
         return (
             <div>
-            <NavMenu />
-            <StreamApp //this is only an example account, should be the users info :)
-                apiKey="5y6k3egn3yzs"
-                appId="71363"
-                token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoidXNlci1vbmUifQ.5goB9AX3-mz3TUpfdeZ8Fcj-E_Q_W7fe_T-FQTHdGvQ"
-            >
-                <NotificationDropdown notify />
-                <StatusUpdateForm
-                    feedGroup="timeline"
-                    userId="user-one"/>
-                <FlatFeed
-                    options={{ reactions: { recent: true } }}
-                    notify
-                    Activity={(props) =>
-                        <Activity {...props}
-                            Footer={() => (
-                                <div style={{ padding: '8px 16px' }}>
-                                    <LikeButton {...props} />
-                                    <CommentField
-                                        activity={props.activity}
-                                        onAddReaction={props.onAddReaction} /> 
-                                </div>
-                            )}
-                        />
-                    }
-                    />
+                <NavMenu />
+                <StreamApp
+                    apiKey="urzuchjm2333"
+                    appId="72302"
+                    token={user.token}
+                >
                 
+                    <NotificationDropdown notify />
+                    <StatusUpdateForm
+                        feedGroup="timeline"
+                        userId={user.feedId}
+                    />
+             
+                    <FlatFeed
+                        feedGroup="timeline"
+                        userId={user.feedId}
+                        options={{ reactions: { recent: true } }}
+                        notify
+                        Activity={(props) =>
+                            <Activity {...props}
+                                Footer={() => (
+                                    <div style={{ padding: '8px 16px' }}>
+                                        <LikeButton {...props} />
+                                        <CommentField
+                                            activity={props.activity}
+                                            onAddReaction={props.onAddReaction} />
+                                        <CommentList activityId={props.activity.id} />
+                                    </div>
+                                )}
+                            />
+                        }   
+                    />
                 </StreamApp>
-                </div>
+            </div>
         );
     }
 }
 
-/**
- * Once users are created with the token, we can add this piece of code
- * cant do it now because the account we are logged in is inappropriate
- * <CommentList activityId={props.activity.id} />
-  */
