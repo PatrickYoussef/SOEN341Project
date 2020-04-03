@@ -4,44 +4,31 @@ import 'react-activity-feed/dist/index.css';
 import { NavMenu } from "./Navbar/NavMenu";
 
 export class NewsFeed extends Component {
-
-    constructor() {
-        super()
-        this.state = {
-            username: ""
-        }
-    }
-
-    UNSAFE_componentWillMount() {
-        fetch('https://localhost:44314/api/Users/Username/' + this.props.location.state.username)
-            .then(response => response.json())
-            .then(data => {
-                this.setState({
-                    username: data.username
-                })
-            })
-    }
     
     render() {
-
+        let userList = this.props.location.state.users
+        let username = this.props.location.state.username
+        let user  = userList.find(function (element) {
+                return element.username == username;
+            })
         return (
             <div>
                 <NavMenu />
                 <StreamApp
                     apiKey="urzuchjm2333"
                     appId="72302"
-                    token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZjAxOTQ0OGNjYjlkNDc1MWI5OTY2MzIyYmIxYmQxNmQifQ.S9OU_EoVcV9IuO9DJ3u7y7NjdRK6gY6fPIO8RVYk3cU"
+                    token={user.token}
                 >
-                    <div style={{ fontSize: 28 }}>{this.state.username}</div>
+                    <div style={{fontSize: 28}}>Welcome, {username}</div>
                     <NotificationDropdown notify />
                     <StatusUpdateForm
                         feedGroup="timeline"
-                        userId="f019448ccb9d4751b9966322bb1bd16d"
+                        userId={user.feedId}
                     />
              
                     <FlatFeed
                         feedGroup="timeline"
-                        userId="f019448ccb9d4751b9966322bb1bd16d"
+                        userId={user.feedId}
                         options={{ reactions: { recent: true } }}
                         notify
                         Activity={(props) =>
