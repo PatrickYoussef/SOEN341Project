@@ -19,19 +19,6 @@ constructor(props) {
     }
 
 }
-    
-componentDidMount() {
-
-    fetch('https://localhost:44314/api/Users')
-        .then(response => response.json())
-        .then(data => {
-            this.setState(prevState => {
-                username: data.map((obj) => { prevState.username.push(obj.username) })
-                password: data.map((obj) => { prevState.password.push(obj.password) })
-                allInfo: data.map((obj) => { prevState.allInfo.push(obj) })
-            })
-        })
-    }
 
     showValidationErr(elm, msg) {
         this.setState((prevState) => ({
@@ -103,6 +90,17 @@ componentDidMount() {
                 passwordErr = err.msg
             }
         }
+
+        fetch('https://localhost:44314/api/Users')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                this.setState(prevState => {
+                    username: data.map((obj) => { prevState.username.push(obj.username) })
+                    password: data.map((obj) => { prevState.password.push(obj.password) })
+                    allInfo: data.map((obj) => { prevState.allInfo.push(obj) })
+                })
+            })
 
         return (
             <div className="App">
