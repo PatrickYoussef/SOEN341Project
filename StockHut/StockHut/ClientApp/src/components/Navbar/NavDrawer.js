@@ -70,6 +70,7 @@ function TemporaryDrawer() {
                       </NavLink>
                     );
                   case "Profile":
+
                     return (
                       <NavLink tag={Link} to="/profile">
                         <AccountCircleIcon />{" "}
@@ -89,7 +90,14 @@ function TemporaryDrawer() {
         {["About Us", "Contact Us"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
-              {text == "Contact Us" ? <ContactSupportIcon /> : <InfoIcon />}
+              {text == "Contact Us" ? (
+                <NavLink tag={Link} to="/contactus">
+                  {" "}
+                  <ContactSupportIcon />{" "}
+                </NavLink>
+              ) : (
+                <InfoIcon />
+              )}
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
