@@ -63,7 +63,7 @@ function TemporaryDrawer() {
                                     case "Home":
                                         return <HomeIcon />;
                                     case "Friends":
-                                        return <NavLink tag={Link} to="/counter"> <EmojiPeopleIcon /> </NavLink>;
+                                        return <NavLink tag={Link} to="/friends"> <EmojiPeopleIcon /> </NavLink>;
                                     case "Profile":
                                         return <AccountCircleIcon />;
                                     default:
