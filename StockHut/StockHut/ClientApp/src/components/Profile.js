@@ -60,19 +60,26 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 export default function Profile() {
   const classes = useStyles();
 
-  const [file, setFile] = useState(null);
-
-  const [cards2, setCards2] = useState([]);
+  const [cards, setCards] = useState([]);
+  const [input, setInput] = useState("");
+  const [caption, setCaption] = useState([]);
+  const [count, setCount] = useState(0);
 
   const fileSelectedHandler = event => {
-    setFile(event.target.files[0]);
-    setFile(URL.createObjectURL(event.target.files[0]));
-    setCards2(cards2.concat("1"));
+    setCards([URL.createObjectURL(event.target.files[0]), ...cards]);
+  };
+
+  const inputHandler = event => {
+    setInput(event.target.value);
+  };
+
+  const addCaption = () => {
+    setCaption(caption.concat(input));
   };
 
   return (
@@ -110,7 +117,17 @@ export default function Profile() {
                     placeholder="Upload Image"
                     onChange={fileSelectedHandler}
                   />
-                  {/*<img src={file} />*/}
+                  <br />
+                  <br />
+                  Caption: &ensp;
+                  <input
+                    type="text"
+                    id="caption"
+                    name="caption"
+                    onChange={inputHandler}
+                  />{" "}
+                  &ensp;
+                  <button onClick={addCaption}>Submit</button>
                 </Grid>
               </Grid>
             </div>
@@ -119,13 +136,13 @@ export default function Profile() {
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards2.map(card => (
+            {cards.map(card => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image={file}
-                    title="Image title"
+                    image={card}
+                    title="Image"
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h12" component="h2">
@@ -137,7 +154,8 @@ export default function Profile() {
                   </CardContent>
                   <CardActions>
                     <Button size="small" color="primary">
-                      <FavoriteIcon />
+                      <FavoriteIcon onClick={() => setCount(count + 1)} />{" "}
+                      {count}
                     </Button>
                     <Button size="small" color="primary">
                       <CommentIcon />
@@ -160,3 +178,4 @@ export default function Profile() {
 //https://www.youtube.com/watch?time_continue=1&v=XeiOnkEI7XI&feature=emb_title
 //Display image from <input type = "file"/> : https://stackoverflow.com/questions/43992427/how-to-display-a-image-selected-from-input-type-file-in-reactjs
 //Add value to an array: https://stackoverflow.com/questions/26505064/what-is-the-best-way-to-add-a-value-to-an-array-in-state
+//useState with array: https://www.youtube.com/watch?v=RZ5wKYbOM_I
