@@ -27,11 +27,17 @@ the platform.
 The objective of this project is to implement the scrum methodology using an iteration of 4 sprints. First sprint is to step up the environment, second to implement the core features, third to add aditional features and fourth is for maintenance and fixing bugs.
 Document scrum meetings and using Git Hub repository.
 
-### Front end initial plans
+### How to get it started locally
 
-To begin, we will develop the profile page of the users. Basic layouts will be
-added so that back end can begin working with the platform. 
+1- clone the repos on your device
+2- In your terminal, go inside to ClientApp folder and execute the following line : npm install
+   path: "GitHub\SOEN341Project\StockHut\StockHut\ClientApp\"
+   
+If you are using Visual Studio and your default browser is Google Chrome, you can go ahead and start the solution
 
-### Database startup
-
-We separate the database into many tables: users, pictures, comments, likes... After having a plan confirmed by the whole team, we can start researching on how to connect the database to the backend.
+Otherwise, if you are using the terminal, have a mac or using something else than Google Chrome:
+ Change line 94 in the class Home and lines 18 & 72 from class Signup for it to show your own localhost for the database to work.
+ Here is the path to those classes: "GitHub\SOEN341Project\StockHut\StockHut\ClientApp\src\components" 
+ 
+ For example: axios.post('https://localhost:44314/api/Users', this.state) => change the localhost # only
+ 
