@@ -19,7 +19,7 @@ export class NewsFeed extends Component {
                     appId="72302"
                     token={user.token}
                 >
-                
+                    <div style={{fontSize: 28}}>Welcome, {username}</div>
                     <NotificationDropdown notify />
                     <StatusUpdateForm
                         feedGroup="timeline"

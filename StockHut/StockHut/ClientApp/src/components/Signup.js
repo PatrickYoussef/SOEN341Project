@@ -14,9 +14,7 @@ class Signup extends Component {
             users: [],
             errors: []
         }
-    }
 
-    componentDidMount() {
         fetch('https://localhost:44314/api/Users')
             .then(response => response.json())
             .then(data => {
