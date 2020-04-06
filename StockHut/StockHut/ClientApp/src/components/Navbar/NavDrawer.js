@@ -70,7 +70,12 @@ function TemporaryDrawer() {
                       </NavLink>
                     );
                   case "Profile":
-                    return <AccountCircleIcon />;
+
+                    return (
+                      <NavLink tag={Link} to="/profile">
+                        <AccountCircleIcon />{" "}
+                      </NavLink>
+                    );
                   default:
                     return <MailIcon />;
                 }

@@ -8,6 +8,8 @@ import Signup from "./components/Signup";
 import { NewsFeed } from "./components/NewsFeed";
 import { ContactUs } from "./components/ContactUs";
 import "./custom.css";
+import Profile from "./components/Profile";
+
 export default class App extends Component {
   static displayName = App.name;
 
@@ -20,6 +22,7 @@ export default class App extends Component {
         <Route path="/fetch-data" component={FetchData} />
         <Route path="/newsfeed" component={NewsFeed} />
         <Route path="/contactus" component={ContactUs} />
+        <Route path="/Profile" component={Profile} />
       </Layout>
     );
   }
