@@ -63,9 +63,19 @@ function TemporaryDrawer() {
                                     case "Home":
                                         return <HomeIcon />;
                                     case "Friends":
-                                        return <NavLink tag={Link} to="/friends"> <EmojiPeopleIcon /> </NavLink>;
+                                        return (
+                                            <NavLink tag={Link} to="/friends">
+                                                {" "}
+                                                <EmojiPeopleIcon />{" "}
+                                            </NavLink>
+                                        );
                                     case "Profile":
-                                        return <AccountCircleIcon />;
+
+                                        return (
+                                            <NavLink tag={Link} to="/profile">
+                                                <AccountCircleIcon />{" "}
+                                            </NavLink>
+                                        );
                                     default:
                                         return <MailIcon />;
                                 }
@@ -80,7 +90,14 @@ function TemporaryDrawer() {
                 {["About Us", "Contact Us"].map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemIcon>
-                            {text == "Contact Us" ? <ContactSupportIcon /> : <InfoIcon />}
+                            {text == "Contact Us" ? (
+                                <NavLink tag={Link} to="/contactus">
+                                    {" "}
+                                    <ContactSupportIcon />{" "}
+                                </NavLink>
+                            ) : (
+                                    <InfoIcon />
+                                )}
                         </ListItemIcon>
                         <ListItemText primary={text} />
                     </ListItem>
