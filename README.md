@@ -30,6 +30,7 @@ Document scrum meetings and using Git Hub repository.
 ### How to get it started locally
 
 1- clone the repos on your device
+
 2- In your terminal, go inside to ClientApp folder and execute the following line : npm install
    path: "GitHub\SOEN341Project\StockHut\StockHut\ClientApp\"
    
