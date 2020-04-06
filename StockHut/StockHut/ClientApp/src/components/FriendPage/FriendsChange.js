@@ -6,6 +6,15 @@ import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+
+
+const useStyles1 = makeStyles((theme) => ({
+    root: {
+        flexShrink: 0,
+        marginLeft: theme.spacing(2.5),
+    },
+}));
 
 export default function TablePaginationActions(props) {
     const classes = useStyles1();
