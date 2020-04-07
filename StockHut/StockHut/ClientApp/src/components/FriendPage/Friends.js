@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { NavMenu } from '../Navbar/NavMenu'
 import { FriendsChange } from './FriendsChange'
-
+import axios from 'axios';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -51,10 +51,11 @@ class Friends extends Component {
             })
     }
 
-    handleButton = () => {
+    handleButton = (username) => {
         this.setState(prevState =>({
             follow: !prevState.follow
         }))
+        let users = axios.post('https://localhost:44314/api/Users' + username);
         console.log(this.state)
     }
 
@@ -86,7 +87,7 @@ class Friends extends Component {
                                     {row.username}
                                 </TableCell>
                                 <TableCell align="right">
-                                    <Button variant="outlined" onClick={this.handleButton} >
+                                    <Button variant="outlined" onClick={() => this.handleButton(row.username)} >
                                         {this.state.follow ? "FOLLOW": "UNFOLLOW"}
                                     </Button>
                                 </TableCell>

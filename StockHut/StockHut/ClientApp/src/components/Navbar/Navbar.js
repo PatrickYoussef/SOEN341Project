@@ -43,7 +43,7 @@ function ButtonAppBar() {
                     <Typography variant="h6" className={classes.title} align="center">
                         StockHut
                     </Typography>
-                    <Button color="inherit">
+                    <Button color="inherit" onClick="window.location.reload();">
                         <NavLink style={{ textDecoration: 'none', color: 'white' }} tag={Link} to="/">Logout</NavLink>
                     </Button>
                 </Toolbar>

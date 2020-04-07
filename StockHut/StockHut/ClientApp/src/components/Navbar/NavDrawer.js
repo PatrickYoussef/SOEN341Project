@@ -61,7 +61,12 @@ function TemporaryDrawer() {
                             {(() => {
                                 switch (text) {
                                     case "Home":
-                                        return <HomeIcon />;
+                                        return (
+                                            <NavLink tag={Link} to="/newsfeed">
+                                                {" "}
+                                                <HomeIcon />{" "}
+                                            </NavLink>
+                                        );
                                     case "Friends":
                                         return (
                                             <NavLink tag={Link} to="/friends">

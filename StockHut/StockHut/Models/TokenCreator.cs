@@ -24,9 +24,20 @@ namespace StockHut.Models
                 {"gender", ""},
             };
             client.Users.Add(user.FeedId, userData, true);
-            var userFeed1 = client.Feed("timeline", user.FeedId);
+            var userFeed = client.Feed("timeline", user.FeedId);
            
             return token;
+        }
+
+        public void FollowUser(Models.Users user, IEnumerable<Users> allUsers)
+        {
+            StreamClient client = ConnectStream();
+            var userFeed = client.Feed("timeline", user.FeedId);
+            foreach (var item in allUsers)
+            {
+                userFeed.FollowFeed("flat", item.FeedId ); 
+            }
+            
         }
 
     }
