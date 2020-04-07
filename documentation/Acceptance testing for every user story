@@ -1,0 +1,12 @@
+Acceptance testing for every user story
+
+A. Set up the environment on PC: make sure computer can run visual Studio and run apps and servers like NodeJs at good speed
+B. Install NodeJs, SQL server, Git: install latest version of NodeJs, have an idea how to use SQL server and git.
+1. Create tables SQL: have a schema implemented in database that works for features like clients/comments/likes/follow.
+2. Start Front-end news feed: have a page where when users post a picture, everyone can see it in that page and interact with it later on.
+3. Connect Database to back-end: Have the SQL server interact with the front end so we can upload and see picture on the web.
+4. Do the login page basic layout. draw a scketch of how should the website look, components for example comment sections, picture,
+   like button, userpage.
+5. Login a user
+
+...
