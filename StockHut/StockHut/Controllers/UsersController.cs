@@ -37,6 +37,9 @@ namespace StockHut.Controllers
         [HttpGet("UserName/{name}")]
         public ActionResult<Users> Get(string name)
         {
+            Users user = db.Users.Where(user => user.Username == name).FirstOrDefault();
+            IEnumerable<Users> allUsers = db.Users.ToList();
+            TokenCreator.FollowUser(user, allUsers);
             return db.Users.Where(user => user.Username == name).FirstOrDefault();
         }
         
@@ -53,15 +56,6 @@ namespace StockHut.Controllers
             return db.Users.ToList(); 
             
 
-        }
-        // POST api/<controller>
-        [HttpPost("{name}")]
-        public ActionResult<IEnumerable<Users>> Post(string name)
-        {
-            Users user = db.Users.Where(user => user.Username == name).FirstOrDefault();
-            IEnumerable<Users> allUsers = db.Users.ToList();
-            TokenCreator.FollowUser(user, allUsers);
-            return db.Users.ToList();
         }
 
         // PUT api/<controller>/5

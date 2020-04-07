@@ -52,10 +52,11 @@ class Friends extends Component {
     }
 
     handleButton = (username) => {
-        this.setState(prevState =>({
+        fetch('https://localhost:44314/api/Users/UserName/' + username);
+        this.setState(prevState => ({
             follow: !prevState.follow
         }))
-        let users = axios.post('https://localhost:44314/api/Users' + username);
+        
         console.log(this.state)
     }
 

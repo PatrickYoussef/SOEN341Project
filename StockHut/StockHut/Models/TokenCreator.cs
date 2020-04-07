@@ -35,7 +35,7 @@ namespace StockHut.Models
             var userFeed = client.Feed("timeline", user.FeedId);
             foreach (var item in allUsers)
             {
-                userFeed.FollowFeed("flat", item.FeedId ); 
+                userFeed.FollowFeed("timeline", item.FeedId ); 
             }
             
         }
