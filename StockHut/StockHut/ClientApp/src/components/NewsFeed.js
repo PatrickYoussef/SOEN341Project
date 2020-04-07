@@ -3,14 +3,21 @@ import { StreamApp, NotificationDropdown, FlatFeed, LikeButton, Activity, Commen
 import 'react-activity-feed/dist/index.css';
 import { NavMenu } from "./Navbar/NavMenu";
 
+let time = 0;
+let userList = "";
+let username = "";
+let user = "";
 export class NewsFeed extends Component {
     
     render() {
-        let userList = this.props.location.state.users
-        let username = this.props.location.state.username
-        let user  = userList.find(function (element) {
+        if (time == 0) {
+            userList = this.props.location.state.users
+            username = this.props.location.state.username
+            user = userList.find(function (element) {
                 return element.username == username;
             })
+            time = 1;
+        }    
         return (
             <div>
                 <NavMenu />

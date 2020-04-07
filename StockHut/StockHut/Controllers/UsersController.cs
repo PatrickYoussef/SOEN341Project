@@ -37,6 +37,9 @@ namespace StockHut.Controllers
         [HttpGet("UserName/{name}")]
         public ActionResult<Users> Get(string name)
         {
+            Users user = db.Users.Where(user => user.Username == name).FirstOrDefault();
+            IEnumerable<Users> allUsers = db.Users.ToList();
+            TokenCreator.FollowUser(user, allUsers);
             return db.Users.Where(user => user.Username == name).FirstOrDefault();
         }
         
