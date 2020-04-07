@@ -1,3 +1,4 @@
+Acceptance testing for every user story
 | user story | action |condition |result |
 | --- | --- | --- |--- |
 |A. Set up the environment on PC | run visual studio with node.js  | --- |make sure computer can run visual studio correctly with NODE.js |
