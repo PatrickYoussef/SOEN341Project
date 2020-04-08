@@ -18,6 +18,9 @@ import CommentIcon from "@material-ui/icons/Comment";
 import { NavMenu } from "./Navbar/NavMenu";
 
 
+let time = 0;
+let username = "";
+
 function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
@@ -29,7 +32,8 @@ function Copyright() {
 
   );
 }
- 
+
+
 const useStyles = makeStyles((theme) => ({
 
 
@@ -86,7 +90,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Profile(props) {
-  const classes = useStyles();
+
+ const classes = useStyles();
 
   const [cards, setCards] = useState([]);
   const [input, setInput] = useState("");
@@ -104,8 +109,9 @@ export default function Profile(props) {
   const addCaption = () => {
     setCaption(caption.concat(input));
   };
-
-  return (
+  
+    
+ return (
   
         <div >
       <NavMenu />
@@ -124,29 +130,24 @@ export default function Profile(props) {
           variant="h4"
           align="left"
           color="textPrimary"
-          gutterBottom
-        >
-          Adam21
-        <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography
-              component="h1"
-              variant="h2"
-              align="center"
-              color="textPrimary"
-              gutterBottom
             >
-              Name
+
+          Name
+                                                  
             </Typography>
+
             <Typography
               variant="h5"
               align="left"
               color="textSecondary"
-                          paragraph
-                          display="flex"
+              paragraph
+              display="flex"
             >
               Description
-            </Typography></ div>
+                                
+            </Typography>
+           </ div>
+
              <div className={classes.heroButtons} flexGrow="1" >
 
               <Grid container spacing={1} justify="center">
@@ -233,8 +234,8 @@ export default function Profile(props) {
           
        </div>
   );
+    
 }
-
 //Image Upload Useful Notes:
 //https://stackoverflow.com/questions/43992427/how-to-display-a-image-selected-from-input-type-file-in-reactjs
 //https://reactjs.org/docs/hooks-state.html
