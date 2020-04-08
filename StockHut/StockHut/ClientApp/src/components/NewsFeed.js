@@ -20,7 +20,7 @@ export class NewsFeed extends Component {
         }    
         return (
             <div>
-                <NavMenu />
+                <NavMenu username={user.username}/>
                 <StreamApp
                     apiKey="urzuchjm2333"
                     appId="72302"

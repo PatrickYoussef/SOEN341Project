@@ -29,14 +29,12 @@ namespace StockHut.Models
             return token;
         }
 
-        public void FollowUser(Models.Users user, IEnumerable<Users> allUsers)
+        public void FollowUser(Models.Users userFollow, Models.Users currentUser)
         {
             StreamClient client = ConnectStream();
-            var userFeed = client.Feed("timeline", user.FeedId);
-            foreach (var item in allUsers)
-            {
-                userFeed.FollowFeed("timeline", item.FeedId ); 
-            }
+            var userFeed = client.Feed("timeline", currentUser.FeedId);
+            userFeed.FollowFeed("timeline", userFollow.FeedId ); 
+            
             
         }
 

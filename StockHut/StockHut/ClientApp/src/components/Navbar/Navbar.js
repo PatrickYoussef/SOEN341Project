@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-function ButtonAppBar() {
+function ButtonAppBar(props) {
     const classes = useStyles();
 
     return (
@@ -38,7 +38,7 @@ function ButtonAppBar() {
                         color="inherit"
                         aria-label="menu"
                     >
-                        <TemporaryDrawer />
+                        <TemporaryDrawer username={props.username} />
                     </IconButton>
                     <Typography variant="h6" className={classes.title} align="center">
                         StockHut
