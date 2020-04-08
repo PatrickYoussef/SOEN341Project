@@ -34,13 +34,14 @@ namespace StockHut.Controllers
         }
 
         // GET api/<controller>/4
-        [HttpGet("UserName/{name}")]
-        public ActionResult<Users> Get(string name)
+        [HttpGet("UserName/{nameFollow}/{nameCurrent}")]
+        public ActionResult<Users> Get(string nameFollow, string nameCurrent)
         {
-            Users user = db.Users.Where(user => user.Username == name).FirstOrDefault();
+            Users userFollow = db.Users.Where(user => user.Username == nameFollow).FirstOrDefault();
+            Users userCurrent = db.Users.Where(user => user.Username == nameCurrent).FirstOrDefault();
             IEnumerable<Users> allUsers = db.Users.ToList();
-            TokenCreator.FollowUser(user, allUsers);
-            return db.Users.Where(user => user.Username == name).FirstOrDefault();
+            TokenCreator.FollowUser(userFollow, userCurrent);
+            return db.Users.Where(user => user.Username == nameCurrent).FirstOrDefault();
         }
         
         // POST api/<controller>

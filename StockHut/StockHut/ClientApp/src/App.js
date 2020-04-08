@@ -22,7 +22,7 @@ export default class App extends Component {
                 <Route path='/friends' component={Friends} />
                 <Route path='/newsfeed' component={NewsFeed} />
                 <Route path="/contactus" component={ContactUs} />
-                <Route path="/Profile" component={Profile} />
+                <Route path="/profile" component={Profile} />
             </Layout>
             
         );

@@ -17,8 +17,8 @@
 - React
 - SQL
 
-### Techniques
- TBD
+### SCREENSHOTS
+ THERE IS A DOCUMENT CALLED SCREENSHOTS IN THE FILES ABOVE, this is for sprint 4
 ### Description / Objective/ Core Features of the project
 
 The Application is called StockHut the main focus of this project is to present a simplified version of the platform called
@@ -32,7 +32,8 @@ Document scrum meetings and using Git Hub repository.
 1- clone the repos on your device
 
 2- In your terminal, go inside to ClientApp folder and execute the following line : npm install
-   path: "GitHub\SOEN341Project\StockHut\StockHut\ClientApp\"
+  
+  path: "GitHub\SOEN341Project\StockHut\StockHut\ClientApp\"
    
 If you are using Visual Studio and your default browser is Google Chrome, you can go ahead and start the solution
 

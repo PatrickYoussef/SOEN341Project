@@ -85,9 +85,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-
-
-export default function Profile() {
+export default function Profile(props) {
   const classes = useStyles();
 
   const [cards, setCards] = useState([]);
@@ -129,6 +127,16 @@ export default function Profile() {
           gutterBottom
         >
           Adam21
+        <div className={classes.heroContent}>
+          <Container maxWidth="sm">
+            <Typography
+              component="h1"
+              variant="h2"
+              align="center"
+              color="textPrimary"
+              gutterBottom
+            >
+              Name
             </Typography>
             <Typography
               variant="h5"

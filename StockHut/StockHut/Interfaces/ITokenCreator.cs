@@ -10,6 +10,6 @@ namespace StockHut.Interfaces
     {
         public StreamClient ConnectStream();
         public string CreateToken(Models.Users user);
-        public void FollowUser(Models.Users user, IEnumerable<Models.Users> allUsers);
+        public void FollowUser(Models.Users userFollow, Models.Users userCurrent);
     }
 }
