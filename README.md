@@ -17,8 +17,8 @@
 - React
 - SQL
 
-### Techniques
- TBD
+### SCREENSHOTS
+ THERE IS A DOCUMENT CALLED SCREENSHOTS IN THE FILES ABOVE, this is for sprint 4
 ### Description / Objective/ Core Features of the project
 
 The Application is called StockHut the main focus of this project is to present a simplified version of the platform called
