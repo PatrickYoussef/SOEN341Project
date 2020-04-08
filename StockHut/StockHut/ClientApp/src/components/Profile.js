@@ -95,7 +95,7 @@ export default function Profile(props) {
               color="textPrimary"
               gutterBottom
             >
-                          {props.location.aboutProps.username}
+              Name
             </Typography>
             <Typography
               variant="h5"
