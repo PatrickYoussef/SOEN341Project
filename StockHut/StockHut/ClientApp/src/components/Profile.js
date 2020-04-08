@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Profile() {
+export default function Profile(props) {
   const classes = useStyles();
 
   const [cards, setCards] = useState([]);
@@ -95,7 +95,7 @@ export default function Profile() {
               color="textPrimary"
               gutterBottom
             >
-              Name of User
+                          {props.location.aboutProps.username}
             </Typography>
             <Typography
               variant="h5"

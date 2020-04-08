@@ -51,8 +51,9 @@ class Friends extends Component {
             })
     }
 
-    handleButton = (username) => {
-        fetch('https://localhost:44314/api/Users/UserName/' + username);
+    handleButton = (usernameFollow, currentUsername) => {
+        console.log("hahahaha: " + currentUsername);
+        fetch('https://localhost:44314/api/Users/UserName/' + usernameFollow + "/" + currentUsername);
         this.setState(prevState => ({
             follow: !prevState.follow
         }))
@@ -88,7 +89,7 @@ class Friends extends Component {
                                     {row.username}
                                 </TableCell>
                                 <TableCell align="right">
-                                    <Button variant="outlined" onClick={() => this.handleButton(row.username)} >
+                                    <Button variant="outlined" onClick={() => this.handleButton(row.username, this.props.location.state.username.username)} >
                                         {this.state.follow ? "FOLLOW": "UNFOLLOW"}
                                     </Button>
                                 </TableCell>

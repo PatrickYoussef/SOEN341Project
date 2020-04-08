@@ -1,8 +1,8 @@
 ﻿import React, { Component } from "react";
 import "./NavMenu.css";
-
 import ButtonAppBar from "./Navbar";
-
+let timer = 0;
+let username = "";
 export class NavMenu extends Component {
     static displayName = NavMenu.name;
 
@@ -20,11 +20,15 @@ export class NavMenu extends Component {
             collapsed: !this.state.collapsed
         });
     }
-
+    
     render() {
+        if (timer == 0) {
+            username = this.props.username;
+            timer++;
+        }
         return (
             <header>
-                <ButtonAppBar />
+                <ButtonAppBar username={username} />
             </header>
         );
     }

@@ -27,7 +27,7 @@ const useStyles = makeStyles({
     }
 });
 
-function TemporaryDrawer() {
+function TemporaryDrawer(props) {
     const classes = useStyles();
     const [state, setState] = React.useState({
         top: false,
@@ -46,7 +46,7 @@ function TemporaryDrawer() {
 
         setState({ ...state, [side]: open });
     };
-
+    const username = props.username;
     const sideList = side => (
         <div
             className={classes.list}
@@ -69,7 +69,10 @@ function TemporaryDrawer() {
                                         );
                                     case "Friends":
                                         return (
-                                            <NavLink tag={Link} to="/friends">
+                                            <NavLink tag={Link} to={{
+                                                pathname: "/friends",
+                                                state: { username: { username } }
+                                            }} >
                                                 {" "}
                                                 <EmojiPeopleIcon />{" "}
                                             </NavLink>
@@ -77,7 +80,10 @@ function TemporaryDrawer() {
                                     case "Profile":
 
                                         return (
-                                            <NavLink tag={Link} to="/profile">
+                                            <NavLink tag={Link} to={{
+                                                pathname: "/profile",
+                                                aboutProps: { username: { username } }
+                                            }} >
                                                 <AccountCircleIcon />{" "}
                                             </NavLink>
                                         );
