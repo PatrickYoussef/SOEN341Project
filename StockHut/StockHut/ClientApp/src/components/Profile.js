@@ -18,9 +18,6 @@ import CommentIcon from "@material-ui/icons/Comment";
 import { NavMenu } from "./Navbar/NavMenu";
 
 
-let time = 0;
-let username = "";
-
 function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
@@ -36,48 +33,55 @@ function Copyright() {
 
 const useStyles = makeStyles((theme) => ({
 
-
-  icon: {
+    icon: {
       marginRight: theme.spacing(2),
-      width: '100%',
+        width: '100%',
+
     },
-  heroContent: {
+
+    heroContent: {
       backgroundColor: '#98ce7d',
-      
-    
-  },
-  heroButtons: {
+
+    },
+
+    heroButtons: {
       marginTop: theme.spacing(4),
       align: 'right',
       flexGrow: 1,
-  },
+
+    },
+
     cardGrid: {
         backgroundColor: '#98ce7d',
     paddingTop: theme.spacing(8),
         paddingBottom: theme.spacing(8),
         
-        
-  },
-    card: {
-        
-    
+    },
+
+    card: { 
     display: "flex",
     flexDirection: "column",
-  },
+
+    },
+
     cardMedia: {
      height: "100%",  
-    paddingTop: "56.25%", // 16:9
+     paddingTop: "56.25%", // 16:9
     //David: Change it to 100% to view
-  },
-  cardContent: {
-      flexGrow: 1,
-      
-  },
-    footer: {
-       
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
+
     },
+
+    cardContent: {
+      flexGrow: 1,
+
+    },
+
+    footer: {
+      backgroundColor: theme.palette.background.paper,
+      padding: theme.spacing(6),
+
+    },
+
     listText: {
         fontfamily: [
             'Gill Sans',
@@ -86,6 +90,7 @@ const useStyles = makeStyles((theme) => ({
             'Trebuchet MS',
             'sans - serif'
         ].join(','),
+
     },
 }));
 
@@ -113,62 +118,64 @@ export default function Profile(props) {
     
  return (
   
-        <div >
+      <div >
       <NavMenu />
 
           <main>
         {/* Hero unit */}
-              <div className={classes.heroContent} >
+        <div className={classes.heroContent} >
                   
-                  <Container>
-                      <div width="50%" display="flex">
+         <Container>
+          <div width="50%" display="flex">
            <img src="https://cloudcone.com/wp-content/uploads/2019/03/blank-avatar.jpg" width="20%" height="30%"  />
 
-          <Typography
-          font= "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" 
-          component="h1"
-          variant="h4"
-          align="left"
-          color="textPrimary"
-            >
+              <Typography
+              font= "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" 
+              component="h1"
+              variant="h4"
+              align="left"
+              color="textPrimary"
+                >
 
-          Name
+                 Name
                                                   
-            </Typography>
+              </Typography>
 
             <Typography
-              variant="h5"
-              align="left"
-              color="textSecondary"
-              paragraph
-              display="flex"
+                variant="h5"
+                align="left"
+                color="textSecondary"
+                paragraph
+                display="flex"
             >
               Description
                                 
             </Typography>
            </ div>
 
-             <div className={classes.heroButtons} flexGrow="1" >
+           <div className={classes.heroButtons} flexGrow="1" >
 
               <Grid container spacing={1} justify="center">
                 <Grid item>
                   Post a Picture &ensp;                
-                 <input
-                    type="file"
-                    name="file"
-                    placeholder="Upload Image"
-                    onChange={fileSelectedHandler}
-                  />
-                  <br />
-                  <br />
-                  Caption: &ensp;                
-                  <input
-                    type="text"
-                    id="caption"
-                    name="caption"
-                    onChange={inputHandler}
-                  />{" "}
-                  &ensp;
+                     <input
+                        type="file"
+                        name="file"
+                        placeholder="Upload Image"
+                        onChange={fileSelectedHandler}
+                      />
+                      <br />
+                      <br />
+
+                      Caption: &ensp;                
+               
+                       <input
+                        type="text"
+                        id="caption"
+                        name="caption"
+                        onChange={inputHandler}
+                      />{" "}
+                       &ensp;
                 
                   <button onClick={addCaption}
                     style={{ font: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ",
@@ -176,9 +183,9 @@ export default function Profile(props) {
                     background: 'rgb(88, 165, 90)',
                     width: '30%',    
                     lineHeight: '20%',
-                        display: 'inline - block',
-                        padding: '4%',
-                        border: 'none',
+                    display: 'inline - block',
+                    padding: '4%',
+                    border: 'none',
                     color: 'white',
                     fontsize: '100%',
                     cursor: 'pointer'}}>
@@ -189,7 +196,7 @@ export default function Profile(props) {
               </Grid>
             
             </div>
-        </Container>
+         </Container>
         </div>
 
         <Container className={classes.cardGrid} maxWidth="md" >
@@ -198,26 +205,33 @@ export default function Profile(props) {
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
+
                   <CardMedia
                     className={classes.cardMedia}
                     image={card}
                     title="Image"
-                        />
-                        <CardContent className={classes.cardContent}>
+                    />
+
+                    <CardContent className={classes.cardContent}>
+
                     <Typography gutterBottom variant="h10" component="h4">
                       UserName
                     </Typography>
+
                     <Typography>
                       Caption. You can use this section to describe the content.
                     </Typography>
-                  </CardContent>
+
+                     </CardContent>
+
                   <CardActions>
+
                     <Button size="small" color="primary">
                       <FavoriteIcon onClick={() => setCount(count + 1)} />{" "}
                       {count}
+                     </Button>
 
-                    </Button>
-                        <Button size="small" color="primary">
+                    <Button size="small" color="primary">
                       <CommentIcon />
                     </Button>
 
@@ -230,9 +244,9 @@ export default function Profile(props) {
       </main>
 
 
-          <Copyright />
+      <Copyright />
           
-       </div>
+    </div>
   );
     
 }
